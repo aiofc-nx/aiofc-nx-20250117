@@ -2,7 +2,7 @@ import { Inject, Injectable, LoggerService } from '@nestjs/common';
 import { ClsService } from 'nestjs-cls';
 import { Logger, LoggerOptions, pino } from 'pino';
 import { PrettyOptions } from 'pino-pretty';
-import { PINO_LOGGER_OPTIONS_PROVIDER } from './constant.ts.js';
+import { PINO_LOGGER_OPTIONS_PROVIDER } from './constant.ts';
 
 @Injectable()
 export class PinoLoggerService implements LoggerService {
