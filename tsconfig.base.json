@@ -19,5 +19,8 @@
     "skipDefaultLibCheck": true,
     "strictNullChecks": false,
     "declaration": true,
+    "paths": {
+      "@aiofc/zod-env": ["packages/zod-env/src/index.ts"]
+    }
   }
 }
