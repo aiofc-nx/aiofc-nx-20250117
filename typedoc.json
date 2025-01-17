@@ -1,0 +1,70 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "includeVersion": true,
+  "tsconfig": "./tsconfig.base.json",
+  "entryPointStrategy": "expand",
+  "entryPoints": [
+    "./apps/*/src/**/!(*.spec|*.test).ts",
+    "./packages/*/src/**/!(*.spec|*.test).ts"
+  ],
+  "projectDocuments": ["docs/project/**/*.md"],
+  "out": "./docs/api",
+  "name": "AIOFC API 文档",
+  "theme": "default",
+  "excludePrivate": false,
+  "excludeProtected": false,
+  "excludeExternals": false,
+  // "plugin": ["typedoc-plugin-merge-modules", "typedoc-plugin-markdown"],
+  "skipErrorChecking": true,
+  "categorizeByGroup": true,
+  "categoryOrder": [
+    "Classes",
+    "Interfaces",
+    "Enums",
+    "Functions",
+    "Variables",
+    "*"
+  ],
+  "exclude": [
+    "**/dist/**",
+    "**/node_modules/**",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/jest.config.ts",
+    "**/jest.preset.js",
+    "**/__tests__/**"
+  ],
+  "validation": {
+    "invalidLink": false,
+    "notDocumented": false
+  },
+  "intentionallyNotExported": ["EnvSchema", "EnvVariables"],
+  "readme": "docs/project/README.md",
+  "logLevel": "Verbose",
+  "navigationLinks": {
+    "Docs": "https://typedoc.org",
+    "API": "https://typedoc.org/api/index.html",
+    "GitHub": "https://github.com/TypeStrong/typedoc"
+  },
+  "searchCategoryBoosts": {
+    "Component": 2,
+    "Model": 1.2
+  },
+  "searchGroupBoosts": {
+    "Classes": 1.5
+  },
+  "highlightLanguages": [
+    "typescript",
+    "tsx",
+    "css",
+    "json",
+    "jsonc",
+    "python",
+    "yaml",
+    "markdown"
+  ],
+  "markdownItOptions": {
+    "html": true
+  }
+  // "lang": "zh"
+}
