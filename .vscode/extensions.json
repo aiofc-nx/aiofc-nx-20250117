@@ -15,6 +15,8 @@
     "yoavbls.pretty-ts-errors",
     "corschenzi.mermaid-graphical-editor",
     "psulek-solo.typedoc-live-preview",
-    "davidanson.vscode-markdownlint"
+    "davidanson.vscode-markdownlint",
+    "wayou.vscode-todo-highlight",
+    "imgildev.vscode-auto-barrel"
   ]
 }
