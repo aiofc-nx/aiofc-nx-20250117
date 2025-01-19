@@ -73,13 +73,21 @@ export class Logger {
 
   private static basePinoPrettyOptions(): PrettyOptions {
     return {
+      // 设置最低日志级别为 info
       minimumLevel: 'info',
+      // 单行显示日志
       singleLine: true,
+      // 转换时间戳为可读格式
       translateTime: true,
+      // 启用日志颜色
       colorize: true,
+      // 日志级别显示在最前面
       levelFirst: true,
+      // 忽略这些字段不显示
       ignore: 'pid,hostname,req,res,reqId,responseTime',
+      // 自定义日志消息格式
       messageFormat: `[{tenantId}] [{reqId}] {msg} [{context}]`,
+      // 同步写入日志
       sync: true,
     };
   }
