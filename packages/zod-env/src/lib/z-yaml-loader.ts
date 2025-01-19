@@ -55,6 +55,7 @@ const buildConfigPath = (options: YamlFileOptions = {}): string => {
  * @returns 配置文件内容
  */
 const readYamlFile = (filePath: string): Record<string, unknown> => {
+  // console.log('获取配置文件', filePath);
   if (!existsSync(filePath)) {
     throw new Error(`配置文件不存在: ${filePath}`);
   }
@@ -73,10 +74,9 @@ const envValidate = <T>(
   config: Record<string, unknown>,
   schema: z.ZodSchema<T>,
 ): T => {
-  console.log('开始验证配置:', JSON.stringify(config, null, 2));
   try {
     const validated = schema.parse(config);
-    console.log('验证通过:', JSON.stringify(validated, null, 2));
+    // console.log('验证通过:', JSON.stringify(validated, null, 2));
     return validated;
   } catch (error) {
     console.error('验证失败:', error);
@@ -125,6 +125,10 @@ export const loadYamlEnvOptions = <T>(
     return envValidate(config, schema);
   } catch (error) {
     console.error('配置加载失败:', error);
+    // 测试环境下直接抛出错误，而不是退出进程
+    if (process.env['NODE_ENV'] === 'test') {
+      throw error;
+    }
     process.exit(1);
   }
 };
