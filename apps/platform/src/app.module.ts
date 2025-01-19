@@ -1,4 +1,9 @@
-import { Module, OnModuleInit } from '@nestjs/common';
+import {
+  Module,
+  MiddlewareConsumer,
+  NestModule,
+  RequestMethod,
+} from '@nestjs/common';
 import { Logger } from '@aiofc/pino-logger';
 import { ClsModule, ClsService } from 'nestjs-cls';
 import {
@@ -6,11 +11,15 @@ import {
   PinoLoggerService,
 } from '@aiofc/pino-logger';
 import { PrettyOptions } from 'pino-pretty';
-import { AppConfig } from '../config/app-config.service';
-import { ZodConfigModule } from '../config/zod-config.module';
+import { EnvOption } from './config/env-option';
+import { ZodConfigModule } from './config/zod-config.module';
 import { PinoLoggerModule } from '@aiofc/pino-logger';
-import { AppService } from './app.service';
-import { AppController } from './app.controller';
+import { AppController } from './app/app.controller';
+import { AppService } from './app/app.service';
+import { TenantMiddleware } from './database/middleware/tenant.middleware';
+import { TenantContextService } from './database/services/tenant-context.service';
+import { DatabaseModule } from './database/database.module';
+import { TenantModule } from './modules/tenant/tenant.module';
 
 const loggerOptions: PrettyOptions = {
   colorize: true,
@@ -40,27 +49,36 @@ const loggerOptions: PrettyOptions = {
     }),
     ZodConfigModule,
     PinoLoggerModule,
+    DatabaseModule,
+    TenantModule,
   ],
   controllers: [AppController],
   providers: [
-    AppConfig, // 注册 AppConfig 为提供者
+    EnvOption, // 注册 AppConfig 为提供者
     {
       provide: PINO_LOGGER_OPTIONS_PROVIDER,
       useValue: loggerOptions,
     },
     PinoLoggerService,
     AppService,
+    TenantContextService,
   ],
   exports: [PinoLoggerService, AppService],
 })
-export class AppModule implements OnModuleInit {
-  constructor(
-    private readonly appConfig: AppConfig,
-    private readonly logger: PinoLoggerService,
-  ) {}
-
-  onModuleInit() {
-    Logger.setConfig(this.appConfig);
-    this.logger.info('ApiModule initialized');
+export class AppModule implements NestModule {
+  constructor() {
+    console.log('AppModule构建');
+  }
+  configure(consumer: MiddlewareConsumer) {
+    consumer
+      .apply(TenantMiddleware)
+      .exclude(
+        { path: '/health', method: RequestMethod.ALL },
+        { path: '/docs', method: RequestMethod.ALL },
+        { path: '/swagger', method: RequestMethod.ALL },
+        { path: '/tenants', method: RequestMethod.ALL },
+        { path: '/tenants/(.*)', method: RequestMethod.ALL },
+      )
+      .forRoutes('*');
   }
 }

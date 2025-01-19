@@ -5,6 +5,7 @@ database:
   port: 5438
   name: aiofc_db
   schema: aiofc
+  isolationStrategy: row
   pool:
     max: 20
     min: 2

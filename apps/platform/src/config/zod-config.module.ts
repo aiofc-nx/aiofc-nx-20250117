@@ -1,5 +1,5 @@
 import { Global, Module } from '@nestjs/common';
-import { AppConfig } from './app-config.service';
+import { EnvOption } from './env-option';
 
 /**
  * ZodConfigModule
@@ -11,7 +11,7 @@ import { AppConfig } from './app-config.service';
  */
 @Global()
 @Module({
-  providers: [AppConfig],
-  exports: [AppConfig],
+  providers: [EnvOption],
+  exports: [EnvOption],
 })
 export class ZodConfigModule {}

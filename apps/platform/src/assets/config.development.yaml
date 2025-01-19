@@ -4,14 +4,17 @@ database:
   host: localhost
   port: 5438
   name: aiofc_db
-  schema: aiofc
+  systemSchema: aiofc
   pool:
     max: 20
     min: 2
+    idle_timeout: 30
+    connect_timeout: 30
+    max_lifetime: 1800 # 30分钟
 
 server:
   port: 3000
   globalPrefix: api
 
 logger:
-  trackingIdHeader: x-tracking-id
+  trackingIdHeader: x-tenant-id
