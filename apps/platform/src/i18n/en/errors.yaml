@@ -1,0 +1,4 @@
+errors:
+  internal_server_error: 'Internal Server Error'
+  tenant_schema_required: 'Tenant schema is required'
+  # ... 其他错误消息

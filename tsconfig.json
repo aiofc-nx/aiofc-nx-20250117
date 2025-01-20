@@ -4,7 +4,8 @@
   "references": [
     { "path": "./packages/pino-logger" },
     { "path": "./apps/platform" },
-    { "path": "./packages/zod-env" }
+    { "path": "./packages/zod-env" },
+    { "path": "./packages/drizzle-schema" }
   ],
 
   "include": ["apps/*/src/**/*.ts", "packages/*/src/**/*.ts"],

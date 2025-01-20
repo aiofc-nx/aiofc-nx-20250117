@@ -25,6 +25,40 @@ export class TenantMiddleware {
    * @throws {Error} 当请求头中没有租户Schema或格式不正确时抛出错误
    */
   async use(req: FastifyRequest, _reply: FastifyReply, next: () => void) {
+    const originalUrl = req.originalUrl || req.url;
+
+    // 检查是否为需要排除的路径
+    const excludedPaths = [
+      '/',
+      '/api',
+      '/health',
+      '/docs',
+      '/swagger',
+      '/tenants',
+    ];
+
+    // 检查是否以 /api/ 或 /tenants/ 开头
+    if (
+      originalUrl.startsWith('/api/') ||
+      originalUrl.startsWith('/tenants/')
+    ) {
+      return next();
+    }
+
+    // 检查是否完全匹配排除路径
+    if (excludedPaths.includes(originalUrl)) {
+      return next();
+    }
+
+    // 添加详细的调试日志
+    console.log('TenantMiddleware processing request:', {
+      url: req.url,
+      originalUrl: req.originalUrl,
+      method: req.method,
+      headers: req.headers,
+      routePattern: (req as any).routerPath, // 获取路由模式
+    });
+
     // 从请求头中获取租户Schema
     const schema = req.headers['x-tenant-schema'] as string;
     if (!schema) {

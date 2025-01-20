@@ -4,12 +4,11 @@ import {
   Injectable,
   NestInterceptor,
 } from '@nestjs/common';
-import { FastifyRequest } from 'fastify';
-import { FastifyReply } from 'fastify/types/reply';
+import { FastifyRequest, FastifyReply } from 'fastify';
 import { Observable, tap } from 'rxjs';
 import { Logger as NestJSLogger } from '@nestjs/common/services/logger.service';
 import { ClsService } from 'nestjs-cls';
-import { Logger } from './logger';
+import { LoggerUtils } from './logger.utils';
 /**
  * 这是一个 HTTP 上下文拦截器，用于记录请求/响应的 HTTP 方法/状态代码/等
  * 这并不理想，因为可以在 Nestjs 拦截器（例如中间件或过滤器）之前/之后修改请求/响应。
@@ -44,34 +43,41 @@ export class LoggerInterceptor implements NestInterceptor {
   private readonly logger = new NestJSLogger(LoggerInterceptor.name);
 
   constructor(private readonly cls: ClsService) {}
-  // 拦截器的实现
+
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
-    // 获取请求和响应对象
-    const [request, response]: [FastifyRequest, FastifyReply] = [
-      context.switchToHttp().getRequest(),
-      context.switchToHttp().getResponse(),
-    ];
-    // 记录请求接收日志
-    this.logger.log(Logger.customReceivedMessage(request));
-    // 记录请求开始时间
-    this.cls.set('startTime', new Date().getTime());
-    // 计算请求处理耗时
-    const elapsedTime =
-      new Date().getTime() - Number(this.cls.get('startTime'));
-    // 返回处理后的响应
-    return next.handle().pipe(
-      tap({
-        next: (): void => {
-          this.logger.log(
-            Logger.customResponseMessage(request, response, elapsedTime),
-          );
-        },
-        error: (): void => {
-          this.logger.log(
-            Logger.customResponseMessage(request, response, elapsedTime),
-          );
-        },
-      }),
-    );
+    return this.cls.run(() => {
+      const [request, response] = [
+        context.switchToHttp().getRequest<FastifyRequest>(),
+        context.switchToHttp().getResponse<FastifyReply>(),
+      ];
+
+      // 记录请求接收日志
+      this.logger.log(LoggerUtils.customReceivedMessage(request));
+
+      // 记录请求开始时间
+      this.cls.set('startTime', new Date().getTime());
+
+      return next.handle().pipe(
+        tap({
+          next: (): void => {
+            const elapsedTime =
+              new Date().getTime() - Number(this.cls.get('startTime'));
+            this.logger.log(
+              LoggerUtils.customResponseMessage(request, response, elapsedTime),
+            );
+          },
+          error: (error): void => {
+            const elapsedTime =
+              new Date().getTime() - Number(this.cls.get('startTime'));
+            this.logger.error(
+              `Error details: ${error.message}\n${error.stack}`,
+            );
+            this.logger.log(
+              LoggerUtils.customResponseMessage(request, response, elapsedTime),
+            );
+          },
+        }),
+      );
+    });
   }
 }
