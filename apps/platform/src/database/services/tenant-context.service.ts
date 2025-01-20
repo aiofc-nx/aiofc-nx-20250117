@@ -13,6 +13,7 @@ import { ClsService } from 'nestjs-cls';
 export class TenantContextService {
   // 租户Schema在CLS中的键名
   private readonly TENANT_SCHEMA_KEY = 'tenantSchema';
+  private readonly TENANT_ID_KEY = 'tenantId';
 
   constructor(private readonly cls: ClsService) {}
 
@@ -35,5 +36,26 @@ export class TenantContextService {
       throw new Error('Tenant schema context not set');
     }
     return schema;
+  }
+
+  /**
+   * 设置当前租户ID到CLS中
+   * @param tenantId - 要设置的租户ID
+   */
+  setTenantId(tenantId: string) {
+    this.cls.set(this.TENANT_ID_KEY, tenantId);
+  }
+
+  /**
+   * 获取当前租户ID
+   * @returns 当前租户的ID
+   * @throws {Error} 如果租户ID未设置则抛出错误
+   */
+  getTenantId(): string {
+    const tenantId = this.cls.get(this.TENANT_ID_KEY);
+    if (!tenantId) {
+      throw new Error('Tenant ID not set in context');
+    }
+    return tenantId;
   }
 }

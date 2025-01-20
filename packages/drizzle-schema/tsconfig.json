@@ -13,8 +13,9 @@
   "files": [],
   "include": [],
   "references": [
-    {
-      "path": "./tsconfig.lib.json"
-    }
+    { "path": "../zod-env" },
+    { "path": "../pino-logger" },
+    { "path": "../../apps/platform" },
+    { "path": "./tsconfig.lib.json" }
   ]
 }

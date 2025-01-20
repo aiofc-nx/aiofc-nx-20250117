@@ -12,7 +12,7 @@ import { EnvSchema, EnvValidatedConfig } from './env-schema';
  * 3. 提供类型安全的配置访问接口
  */
 @Injectable()
-export class EnvOption extends ZodEnv<EnvValidatedConfig> {
+export class EnvService extends ZodEnv<EnvValidatedConfig> {
   constructor() {
     super(EnvSchema, {
       configDir: join(__dirname, '/assets'),

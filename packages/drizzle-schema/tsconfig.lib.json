@@ -11,5 +11,13 @@
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src/**/*.ts", "../../apps/platform/src/database/schema/index.ts"]
+  "include": [
+    "src/**/*.ts",
+    "../../apps/platform/src/database/schema/index.ts"
+  ],
+  "references": [
+    { "path": "../zod-env/tsconfig.lib.json" },
+    { "path": "../pino-logger/tsconfig.lib.json" },
+    { "path": "../../apps/platform/tsconfig.app.json" }
+  ]
 }

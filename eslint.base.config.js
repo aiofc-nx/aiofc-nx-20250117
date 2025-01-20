@@ -36,6 +36,7 @@ module.exports = [
       '@typescript-eslint/no-empty-interface': 'off',
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/no-non-null-assertion': 'off',
       // 配置未使用变量的检查规则
       '@typescript-eslint/no-unused-vars': [
         'error', // 违反规则时报错
