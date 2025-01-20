@@ -15,7 +15,7 @@ import {
 import { STATUS_CODES } from 'http';
 import { I18nService, I18nContext } from 'nestjs-i18n';
 import { EnvService } from '../../config/env.service';
-import { LoggerUtils } from '@aiofc/pino-logger';
+import { LoggingService } from '@aiofc/pino-logger';
 import { PostgresError } from 'postgres';
 import { FastifyReply } from 'fastify';
 import { BaseExceptionFilter, HttpAdapterHost } from '@nestjs/core';
@@ -52,7 +52,7 @@ type ErrorKeys = {
 @Catch()
 export class GlobalExceptionFilter extends BaseExceptionFilter {
   private debug = false;
-  private readonly logger = LoggerUtils.pinoPrettyLogger();
+  private readonly logger = LoggingService.pinoPrettyLogger();
 
   constructor(
     private readonly env: EnvService,

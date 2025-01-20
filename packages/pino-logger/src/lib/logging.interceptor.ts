@@ -8,7 +8,7 @@ import { FastifyRequest, FastifyReply } from 'fastify';
 import { Observable, tap } from 'rxjs';
 import { Logger as NestJSLogger } from '@nestjs/common/services/logger.service';
 import { ClsService } from 'nestjs-cls';
-import { LoggerUtils } from './logger.utils';
+import { LoggingService } from './logging.service';
 /**
  * 这是一个 HTTP 上下文拦截器，用于记录请求/响应的 HTTP 方法/状态代码/等
  * 这并不理想，因为可以在 Nestjs 拦截器（例如中间件或过滤器）之前/之后修改请求/响应。
@@ -39,8 +39,8 @@ import { LoggerUtils } from './logger.utils';
  * - 使用响应式编程处理异步流程
  */
 @Injectable()
-export class LoggerInterceptor implements NestInterceptor {
-  private readonly logger = new NestJSLogger(LoggerInterceptor.name);
+export class LoggingInterceptor implements NestInterceptor {
+  private readonly logger = new NestJSLogger(LoggingInterceptor.name);
 
   constructor(private readonly cls: ClsService) {}
 
@@ -52,7 +52,7 @@ export class LoggerInterceptor implements NestInterceptor {
       ];
 
       // 记录请求接收日志
-      this.logger.log(LoggerUtils.customReceivedMessage(request));
+      this.logger.log(LoggingService.customReceivedMessage(request));
 
       // 记录请求开始时间
       this.cls.set('startTime', new Date().getTime());
@@ -63,7 +63,11 @@ export class LoggerInterceptor implements NestInterceptor {
             const elapsedTime =
               new Date().getTime() - Number(this.cls.get('startTime'));
             this.logger.log(
-              LoggerUtils.customResponseMessage(request, response, elapsedTime),
+              LoggingService.customResponseMessage(
+                request,
+                response,
+                elapsedTime,
+              ),
             );
           },
           error: (error): void => {
@@ -73,7 +77,11 @@ export class LoggerInterceptor implements NestInterceptor {
               `Error details: ${error.message}\n${error.stack}`,
             );
             this.logger.log(
-              LoggerUtils.customResponseMessage(request, response, elapsedTime),
+              LoggingService.customResponseMessage(
+                request,
+                response,
+                elapsedTime,
+              ),
             );
           },
         }),

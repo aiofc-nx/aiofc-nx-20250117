@@ -3,9 +3,9 @@ import { ClsService } from 'nestjs-cls';
 import { BaseLogger } from 'pino';
 import { PrettyOptions } from 'pino-pretty';
 import { PINO_LOGGER_OPTIONS_PROVIDER } from './constant.ts';
-import { LoggerUtils } from './logger.utils.js';
+import { LoggingService } from './logging.service.js';
 @Injectable()
-export class PinoLoggerService implements LoggerService {
+export class PinoService implements LoggerService {
   // private static instance: PinoLoggerService;
   private readonly pinoLogger: BaseLogger;
 
@@ -13,40 +13,8 @@ export class PinoLoggerService implements LoggerService {
     @Inject(PINO_LOGGER_OPTIONS_PROVIDER) private options: PrettyOptions,
     private readonly cls: ClsService,
   ) {
-    this.pinoLogger = LoggerUtils.pinoPrettyLogger(options);
+    this.pinoLogger = LoggingService.pinoPrettyLogger(options);
   }
-
-  // // 替代 getInstance 的静态方法
-  // public static getDefaultLogger(): Logger {
-  //   if (!PinoLoggerService.instance) {
-  //     const defaultLogger = pino({
-  //       level: process.env['LOG_LEVEL'] || 'info',
-  //       transport: {
-  //         target: 'pino-pretty',
-  //         options: { colorize: true },
-  //       },
-  //     });
-  //     return defaultLogger;
-  //   }
-  //   return PinoLoggerService.instance.pinoLogger;
-  // }
-
-  // public static log(message: any, context?: any) {
-  //   this.getDefaultLogger().info(context || {}, message);
-  // }
-
-  // public static info(message: any, context?: any) {
-  //   this.getDefaultLogger().info(context || {}, message);
-  // }
-
-  // public static error(message: any, context?: any) {
-  //   this.getDefaultLogger().error(context || {}, message);
-  // }
-
-  // // 获取原始的 pino logger 实例
-  // public getPinoLogger(): Logger {
-  //   return this.pinoLogger;
-  // }
 
   // 实现 NestJS LoggerService 接口的方法
   log(message: any, ...optionalParams: any[]) {

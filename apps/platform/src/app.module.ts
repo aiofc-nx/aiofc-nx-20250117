@@ -4,12 +4,9 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { LoggerUtils } from '@aiofc/pino-logger';
+import { LoggingService } from '@aiofc/pino-logger';
 import { ClsModule, ClsService } from 'nestjs-cls';
-import {
-  PINO_LOGGER_OPTIONS_PROVIDER,
-  PinoLoggerService,
-} from '@aiofc/pino-logger';
+import { PINO_LOGGER_OPTIONS_PROVIDER, PinoService } from '@aiofc/pino-logger';
 import { PrettyOptions } from 'pino-pretty';
 import { EnvService } from './config/env.service';
 import { ZodConfigModule } from './config/zod-config.module';
@@ -36,7 +33,7 @@ const loggerOptions: PrettyOptions = {
 @Module({
   imports: [
     ZodConfigModule,
-    PinoLoggerModule.forRoot(LoggerUtils.httpLoggerOptions()),
+    PinoLoggerModule.forRoot(LoggingService.httpLoggerOptions()),
     // CLS模块配置
     ClsModule.forRoot({
       global: true,
@@ -46,7 +43,8 @@ const loggerOptions: PrettyOptions = {
         // 启用请求ID生成
         generateId: true,
         // 自定义ID生成器
-        idGenerator: (req) => LoggerUtils.generateLoggerIdForHttpContext(req),
+        idGenerator: (req) =>
+          LoggingService.generateLoggerIdForHttpContext(req),
         // 请求开始时记录时间戳
         setup: (cls: ClsService, _req, _res) => {
           cls.set('startTime', new Date().getTime());
@@ -90,16 +88,16 @@ const loggerOptions: PrettyOptions = {
   controllers: [AppController],
   providers: [
     EnvService, // 注册 AppConfig 为提供者
-    LoggerUtils,
+    LoggingService,
     {
       provide: PINO_LOGGER_OPTIONS_PROVIDER,
       useValue: loggerOptions,
     },
-    PinoLoggerService,
+    PinoService,
     AppService,
     TenantContextService,
   ],
-  exports: [PinoLoggerService, AppService],
+  exports: [PinoService, AppService],
 })
 export class AppModule implements NestModule {
   constructor() {

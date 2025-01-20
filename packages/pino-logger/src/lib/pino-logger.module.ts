@@ -1,5 +1,5 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { PinoLoggerService } from './pino-logger.service';
+import { PinoService } from './pino.service';
 import { PINO_LOGGER_OPTIONS_PROVIDER } from './constant.ts';
 import { PrettyOptions } from 'pino-pretty';
 import { DrizzleLoggerService } from './drizzle-logger.service';
@@ -14,7 +14,7 @@ export class PinoLoggerModule {
           provide: PINO_LOGGER_OPTIONS_PROVIDER,
           useValue: loggerOptions,
         },
-        PinoLoggerService,
+        PinoService,
         DrizzleLoggerService,
       ],
       imports: [
@@ -39,7 +39,7 @@ export class PinoLoggerModule {
         //   },
         // }),
       ],
-      exports: [PinoLoggerService, DrizzleLoggerService],
+      exports: [PinoService, DrizzleLoggerService],
     };
   }
 }

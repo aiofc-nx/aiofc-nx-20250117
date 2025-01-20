@@ -5,12 +5,13 @@ import { FastifyReply } from 'fastify/types/reply';
 import { randomUUID } from 'crypto';
 import { IncomingMessage } from 'http';
 import { Injectable } from '@nestjs/common';
+
 @Injectable()
-export class LoggerUtils {
+export class LoggingService {
   static get defaultFastifyAdapterLogger(): FastifyServerOptions {
     return {
       logger: false,
-      genReqId: (req) => LoggerUtils.generateLoggerIdForHttpContext(req),
+      genReqId: (req) => LoggingService.generateLoggerIdForHttpContext(req),
     };
   }
 
@@ -25,7 +26,7 @@ export class LoggerUtils {
 
   static pinoPrettyLogger(options?: PrettyOptions): BaseLogger {
     const pinoPrettyOptions = {
-      ...LoggerUtils.basePinoPrettyOptions(),
+      ...LoggingService.basePinoPrettyOptions(),
       ...(options ?? {}),
     };
     return pino(pretty(pinoPrettyOptions));
@@ -60,9 +61,7 @@ export class LoggerUtils {
   }
 
   static customReceivedMessage(req: FastifyRequest): string {
-    const body = req.body ? JSON.stringify(req.body) : '';
-    const query = req.query ? JSON.stringify(req.query) : '';
-    return `${req.method} ${req.originalUrl} ${body ? `body: ${body}` : ''} ${query ? `query: ${query}` : ''}`;
+    return `${req.method} ${req.originalUrl}`;
   }
 
   static customResponseMessage(
@@ -72,7 +71,12 @@ export class LoggerUtils {
     statusCode?: number,
     tenantId?: string,
   ): string {
-    const tenant = tenantId || 'default';
-    return `${req.id}-${tenant}-${req.method} ${req.originalUrl} - ${statusCode ?? res.statusCode} (${Math.ceil(elapsedTime ?? res.elapsedTime)}ms)`;
+    // 优先使用传入的 tenantId，否则从请求头获取，最后使用默认值
+    const tenant =
+      tenantId ||
+      (req.headers['x-tenant-id'] as string) ||
+      (req.headers['x-tenant-schema'] as string) ||
+      'default';
+    return `[${req.id}] [${tenant}] ${req.method} ${req.originalUrl} - ${statusCode ?? res.statusCode} (${Math.ceil(elapsedTime ?? res.elapsedTime)}ms)`;
   }
 }

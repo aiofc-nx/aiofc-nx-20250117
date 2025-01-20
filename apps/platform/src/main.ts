@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
-import { LoggerInterceptor, PinoLoggerService } from '@aiofc/pino-logger';
+import { LoggingInterceptor, PinoService } from '@aiofc/pino-logger';
 import { ClsService } from 'nestjs-cls';
 import { EnvService } from './config/env.service';
 import { AppModule } from './app.module';
@@ -9,7 +9,7 @@ import { I18nService } from 'nestjs-i18n';
 import { I18nTranslations } from './generated/i18n.generated';
 
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
-import { LoggerUtils } from '@aiofc/pino-logger';
+import { LoggingService } from '@aiofc/pino-logger';
 
 /**
  * 应用程序引导函数
@@ -37,7 +37,7 @@ async function bootstrap() {
   try {
     // 创建 Fastify 适配器，使用自定义日志配置
     const adapter = new FastifyAdapter({
-      ...LoggerUtils.defaultFastifyAdapterLogger, // 添加请求ID生成等配置
+      ...LoggingService.defaultFastifyAdapterLogger, // 添加请求ID生成等配置
       logger: false, // 保持禁用 Fastify 内置日志，因为我们使用自定义的 PinoLogger
     });
 
@@ -49,12 +49,6 @@ async function bootstrap() {
 
     const appConfig = app.get<EnvService>(EnvService);
 
-    // 添加调试日志
-    console.log('Server config:', {
-      port: appConfig.server.port,
-      globalPrefix: appConfig.server.globalPrefix,
-    });
-
     // 注册全局异常过滤器
     const httpAdapter = app.get(HttpAdapterHost);
     const i18n = app.get<I18nService<I18nTranslations>>(I18nService);
@@ -62,27 +56,36 @@ async function bootstrap() {
       new GlobalExceptionFilter(appConfig, httpAdapter, i18n),
     );
     // 使用自定义日志服务
-    const logger = app.get(PinoLoggerService);
+    const logger = app.get(PinoService);
     app.useLogger(logger);
 
     // 获取必要的服务
     // const clsService = app.get(ClsService);
 
     // 使用自定义日志拦截器，实现请求日志
-    app.useGlobalInterceptors(new LoggerInterceptor(app.get(ClsService)));
+    app.useGlobalInterceptors(new LoggingInterceptor(app.get(ClsService)));
     // 启用跨域资源共享
     app.enableCors();
     // 设置全局路由前缀
     app.setGlobalPrefix(appConfig.server.globalPrefix);
 
+    adapter.getInstance().addHook('preHandler', (request, _reply, done) => {
+      // TODO: 打印请求, 需要删除
+      console.log('Request:', {
+        method: request.method,
+        url: request.url,
+        body: request.body,
+        query: request.query,
+        headers: request.headers,
+      });
+      if (request.body) {
+        (request.raw as any).body = request.body;
+      }
+      done();
+    });
+
     // 启动 HTTP 服务器
     await app.listen(appConfig.server.port, '0.0.0.0');
-
-    // 添加路由调试信息
-    console.log(
-      'Registered routes:',
-      app.getHttpAdapter().getInstance().printRoutes(),
-    );
 
     console.log(
       `🚀 Application is running on: 
