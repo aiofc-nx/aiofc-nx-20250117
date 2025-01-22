@@ -1,13 +1,6 @@
 import { z } from 'zod';
 
-export const EnvSchema = z.object({
-  /**
-   * API服务配置部分
-   */
-  server: z.object({
-    port: z.coerce.number().default(3000), // API服务端口，默认3000
-    globalPrefix: z.string().default('api'), // API全局路由前缀，默认'api'
-  }),
+export const DatabaseEnvSchema = z.object({
   /**
    * 数据库配置部分
    */
@@ -29,13 +22,6 @@ export const EnvSchema = z.object({
       .optional(),
     isolationStrategy: z.enum(['schema', 'row']).default('row'), // 租户隔离策略：schema=独立Schema隔离，row=行级安全隔离
   }),
-
-  /**
-   * 日志配置部分
-   */
-  logger: z.object({
-    trackingIdHeader: z.coerce.string().optional(), // 可选的追踪ID请求头
-  }),
 });
 
-export type EnvValidatedConfig = z.infer<typeof EnvSchema>;
+export type DatabaseValidatedConfig = z.infer<typeof DatabaseEnvSchema>;

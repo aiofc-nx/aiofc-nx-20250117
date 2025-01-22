@@ -11,7 +11,7 @@ import { EnvService } from './env.service';
  */
 @Global()
 @Module({
-  providers: [EnvService],
-  exports: [EnvService],
+  providers: EnvService,
+  exports: EnvService,
 })
 export class ZodConfigModule {}

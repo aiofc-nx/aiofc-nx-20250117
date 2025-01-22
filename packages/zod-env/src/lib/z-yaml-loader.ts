@@ -33,17 +33,22 @@ export interface YamlFileOptions {
    * @default 'config'
    * @remarks 最终的配置文件名格式为: `{prefix}.{NODE_ENV}.yaml`
    */
-  configFilePrefix?: string;
+  configFilePrefix: string;
 }
 
 /**
  * 构建配置文件路径
  * @param options 配置文件选项
  * @returns 配置文件路径
+ * @throws 当未提供必需的configFilePrefix时抛出错误
  */
-const buildConfigPath = (options: YamlFileOptions = {}): string => {
+const buildConfigPath = (options: YamlFileOptions): string => {
+  if (!options.configFilePrefix) {
+    throw new Error('configFilePrefix is required');
+  }
+
   const env = process.env['NODE_ENV'] || 'development';
-  const prefix = options.configFilePrefix || 'config';
+  const prefix = options.configFilePrefix;
   const configDir = options.configDir || join(__dirname, 'assets');
 
   return join(configDir, `${prefix}.${env}.yaml`);
@@ -116,7 +121,7 @@ const envValidate = <T>(
  * ```
  */
 export const loadYamlEnvOptions = <T>(
-  options: YamlFileOptions = {},
+  options: YamlFileOptions,
   schema: z.ZodSchema<T>,
 ): T => {
   try {

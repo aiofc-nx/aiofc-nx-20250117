@@ -1,15 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
-import { LoggingInterceptor, PinoService } from '@aiofc/pino-logger';
-import { ClsService } from 'nestjs-cls';
-import { EnvService } from './config/env.service';
 import { AppModule } from './app.module';
 import { HttpAdapterHost } from '@nestjs/core';
 import { I18nService } from 'nestjs-i18n';
 import { I18nTranslations } from './generated/i18n.generated';
+import { Logger } from '@aiofc/pino-logger';
 
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
-import { LoggingService } from '@aiofc/pino-logger';
+import { AppConfig } from './config/app.config';
 
 /**
  * 应用程序引导函数
@@ -37,7 +35,6 @@ async function bootstrap() {
   try {
     // 创建 Fastify 适配器，使用自定义日志配置
     const adapter = new FastifyAdapter({
-      ...LoggingService.defaultFastifyAdapterLogger, // 添加请求ID生成等配置
       logger: false, // 保持禁用 Fastify 内置日志，因为我们使用自定义的 PinoLogger
     });
 
@@ -47,23 +44,21 @@ async function bootstrap() {
       // logger: false, // 禁用 NestJS 默认日志
     });
 
-    const appConfig = app.get<EnvService>(EnvService);
+    const appConfig = app.get<AppConfig>(AppConfig);
 
     // 注册全局异常过滤器
     const httpAdapter = app.get(HttpAdapterHost);
     const i18n = app.get<I18nService<I18nTranslations>>(I18nService);
-    app.useGlobalFilters(
-      new GlobalExceptionFilter(appConfig, httpAdapter, i18n),
-    );
+    app.useGlobalFilters(new GlobalExceptionFilter(httpAdapter, i18n));
     // 使用自定义日志服务
-    const logger = app.get(PinoService);
+    const logger = app.get(Logger);
     app.useLogger(logger);
 
     // 获取必要的服务
     // const clsService = app.get(ClsService);
 
     // 使用自定义日志拦截器，实现请求日志
-    app.useGlobalInterceptors(new LoggingInterceptor(app.get(ClsService)));
+    // app.useGlobalInterceptors(new LoggingInterceptor(app.get(ClsService)));
     // 启用跨域资源共享
     app.enableCors();
     // 设置全局路由前缀

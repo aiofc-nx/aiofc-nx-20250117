@@ -12,9 +12,3 @@ database:
     connect_timeout: 30
     max_lifetime: 1800 # 30分钟
 
-server:
-  port: 3000
-  globalPrefix: api
-
-logger:
-  trackingIdHeader: x-tenant-id
