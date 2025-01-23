@@ -42,7 +42,6 @@ Thumbs.db
 .nx/workspace-data
 
 # TypeDoc
-/docs
 
 # docker
 /docker
