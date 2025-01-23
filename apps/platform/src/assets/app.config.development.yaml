@@ -1,0 +1,6 @@
+server:
+  port: 3000
+  globalPrefix: api
+
+logger:
+  trackingIdHeader: x-tenant-id

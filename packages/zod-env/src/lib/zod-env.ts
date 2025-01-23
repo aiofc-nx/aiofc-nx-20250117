@@ -61,7 +61,7 @@ export class ZodEnv<T> {
    * @param schema - 用于验证配置的Zod Schema
    * @param options - YAML配置文件的选项
    */
-  constructor(schema: z.ZodType<T>, options: YamlFileOptions = {}) {
+  constructor(schema: z.ZodType<T>, options: YamlFileOptions) {
     const config = loadYamlEnvOptions(options, schema);
     this._config = config;
   }

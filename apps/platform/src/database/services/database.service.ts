@@ -1,8 +1,8 @@
 import { Injectable, OnModuleInit } from '@nestjs/common';
 import { drizzle } from 'drizzle-orm/postgres-js';
 import postgres from 'postgres';
-import { EnvService } from '../../config/env.service';
 import * as schema from '../schema';
+import { DatabaseConfig } from '../../config/database.config';
 
 /**
  * 租户隔离策略枚举
@@ -42,7 +42,7 @@ export class DatabaseService implements OnModuleInit {
    * 构造函数
    * @param env - 配置服务,用于获取数据库连接配置
    */
-  constructor(private env: EnvService) {
+  constructor(private env: DatabaseConfig) {
     this.client = postgres({
       host: this.env.database.host,
       port: this.env.database.port,

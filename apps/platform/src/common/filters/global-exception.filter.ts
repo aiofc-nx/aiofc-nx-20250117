@@ -14,11 +14,13 @@ import {
 } from '@nestjs/common';
 import { STATUS_CODES } from 'http';
 import { I18nService, I18nContext } from 'nestjs-i18n';
-import { EnvService } from '../../config/env.service';
-import { LoggingService } from '@aiofc/pino-logger';
+import { Logger } from '@aiofc/pino-logger';
 import { PostgresError } from 'postgres';
 import { FastifyReply } from 'fastify';
 import { BaseExceptionFilter, HttpAdapterHost } from '@nestjs/core';
+import pino from 'pino';
+import { PinoLogger } from '@aiofc/pino-logger';
+import { ClsService } from 'nestjs-cls';
 
 // 扩展 FastifyRequest 类型
 declare module 'fastify' {
@@ -52,14 +54,21 @@ type ErrorKeys = {
 @Catch()
 export class GlobalExceptionFilter extends BaseExceptionFilter {
   private debug = false;
-  private readonly logger = LoggingService.pinoPrettyLogger();
+  private readonly logger: Logger;
 
   constructor(
-    private readonly env: EnvService,
     protected readonly httpAdapterHost: HttpAdapterHost,
     private readonly i18n: I18nService<I18nTranslations>,
+    private readonly cls: ClsService,
   ) {
     super(httpAdapterHost.httpAdapter);
+    this.logger = new Logger(
+      new PinoLogger(
+        { pinoHttp: pino({ name: 'GlobalExceptionFilter' }) },
+        this.cls,
+      ),
+      { renameContext: 'context' },
+    );
   }
 
   /**

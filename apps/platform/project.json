@@ -23,6 +23,12 @@
           "buildTarget": "platform:build:production"
         }
       }
+    },
+    "generate:i18n": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "i18n-generate"
+      }
     }
   }
 }
