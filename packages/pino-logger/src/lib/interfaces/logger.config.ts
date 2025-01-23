@@ -65,6 +65,21 @@ export interface LoggerConfig {
       logValues: boolean;
     };
   };
+
+  transport?: {
+    target: string;
+    options: {
+      minimumLevel: string;
+      singleLine: boolean;
+      translateTime: string;
+      colorize: boolean;
+      levelFirst: boolean;
+      ignore: string;
+      messageKey: string;
+      messageFormat: string;
+      sync: boolean;
+    };
+  };
 }
 
 /**
@@ -82,12 +97,19 @@ export const defaultConfig: LoggerConfig = {
     parentIdHeader: 'x-parent-id',
     sampleRate: 1,
     timing: true,
-    callStack: true,
-    resources: true,
-    cache: {
-      enabled: true,
-      logKeys: true,
-      logValues: false,
+  },
+  transport: {
+    target: 'pino-pretty',
+    options: {
+      minimumLevel: 'info',
+      singleLine: true,
+      translateTime: 'yyyy-mm-dd HH:MM:ss.l o',
+      colorize: true,
+      levelFirst: true,
+      ignore: 'pid,hostname',
+      messageKey: 'msg',
+      messageFormat: '{msg}',
+      sync: true,
     },
   },
 };

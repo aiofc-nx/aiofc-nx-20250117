@@ -10,11 +10,14 @@
   "projectDocuments": ["docs/guides/**/*.md"],
   "out": "./docs/api",
   "name": "AIOFC API 文档",
-  "theme": "default",
+  // "theme": "default",
+  // "theme": "dumi",
   "excludePrivate": false,
   "excludeProtected": false,
   "excludeExternals": false,
   // "plugin": ["typedoc-plugin-merge-modules", "typedoc-plugin-markdown"],
+  "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
+  // "plugin": ["@yookue/typedoc-theme-dumi"],
   "skipErrorChecking": true,
   "categorizeByGroup": true,
   "categoryOrder": [
@@ -39,13 +42,22 @@
     "notDocumented": false
   },
   "intentionallyNotExported": ["EnvSchema", "EnvVariables"],
-  "readme": "docs/guides/readme.md",
+  // "readme": "docs/guides/readme.md",
+  "readme": "none",
   "logLevel": "Verbose",
   "navigationLinks": {
-    "Docs": "https://typedoc.org",
-    "API": "https://typedoc.org/api/index.html",
-    "GitHub": "https://github.com/TypeStrong/typedoc"
+    "GitHub": "https://github.com/yookue/typedoc-theme-dumi",
+    "Yookue": "https://yookue.com"
   },
+  // "logoImage": "https://yookue.github.io/assets/ico/logo-icon.svg",
+  // "logoWidth": 32,
+  // "logoHeight": 32,
+  // "logoTitle": "AIOFC API 文档",
+  // "navigationLinkTargets": {
+  //   "GitHub": "_blank",
+  //   "Yookue": "_blank"
+  // },
+
   "searchCategoryBoosts": {
     "Component": 2,
     "Model": 1.2

@@ -123,7 +123,6 @@ export class UnifiedLoggingInterceptor implements NestInterceptor {
 
     const { traceIdHeader, parentIdHeader } = this.config.trace;
     const headers = request.headers;
-    // 检查多种可能的 header 名称
     const traceId =
       headers[traceIdHeader.toLowerCase()] ||
       headers['traceid'] ||
@@ -131,22 +130,10 @@ export class UnifiedLoggingInterceptor implements NestInterceptor {
       headers['x-traceid'] ||
       (request as any)._traceId;
 
-    // 从请求对象获取 spanId
     const spanId = (request as any)._spanId;
 
     const now = new Date();
-    const timestamp = now
-      .toLocaleString('zh-CN', {
-        timeZone: 'Asia/Shanghai',
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false,
-      })
-      .replace(/\//g, '-');
+    const timestamp = now.toISOString(); // 使用 ISO 格式的时间戳
 
     const trace: Record<string, any> = {
       traceId,
@@ -394,11 +381,14 @@ export class UnifiedLoggingInterceptor implements NestInterceptor {
     const traceInfo = this.getTraceInfo(request);
     const responseHeaders = response.getHeaders();
 
-    // 先打印一下看看实际的响应头
-    console.log('Response headers:', responseHeaders);
+    // 获取租户信息
+    const tenant =
+      (request.headers['x-tenant-id'] as string) ||
+      (request.headers['x-tenant-schema'] as string) ||
+      'default';
 
     this.logger.info({
-      msg: `[HTTP] ${request.method} ${request.url} ${response.statusCode} ${duration}ms`,
+      msg: `[${traceInfo?.['traceId']}] [${tenant}] ${request.method} ${request.url} - ${response.statusCode} (${duration}ms)`,
       context: 'Response',
       ...(traceInfo && { trace: traceInfo }),
       ...(metrics && { metrics }),
@@ -410,12 +400,30 @@ export class UnifiedLoggingInterceptor implements NestInterceptor {
       },
       res: {
         statusCode: response.statusCode,
-        headers: responseHeaders, // 直接使用完整的响应头
+        headers: {
+          ...responseHeaders,
+          'content-type': responseHeaders['content-type'],
+          'content-length': responseHeaders['content-length'],
+          'access-control-allow-origin':
+            responseHeaders['access-control-allow-origin'],
+          'access-control-allow-methods':
+            responseHeaders['access-control-allow-methods'],
+          'access-control-allow-headers':
+            responseHeaders['access-control-allow-headers'],
+          'access-control-expose-headers':
+            responseHeaders['access-control-expose-headers'],
+          'cache-control': responseHeaders['cache-control'],
+          etag: responseHeaders['etag'],
+          'last-modified': responseHeaders['last-modified'],
+          'x-powered-by': responseHeaders['x-powered-by'],
+          'x-response-time': responseHeaders['x-response-time'],
+        },
         ...(this.config.logResponseBody && {
           body: response.serialize(undefined),
         }),
       },
       duration,
+      tenant,
     });
   }
 

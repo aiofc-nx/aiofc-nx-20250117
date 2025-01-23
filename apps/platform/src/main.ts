@@ -1,10 +1,15 @@
 import { NestFactory } from '@nestjs/core';
-import { FastifyAdapter } from '@nestjs/platform-fastify';
+import {
+  FastifyAdapter,
+  NestFastifyApplication,
+} from '@nestjs/platform-fastify';
 import { AppModule } from './app.module';
 import { HttpAdapterHost } from '@nestjs/core';
 import { I18nService } from 'nestjs-i18n';
 import { I18nTranslations } from './generated/i18n.generated';
 import { Logger } from '@aiofc/pino-logger';
+import { ClsService } from 'nestjs-cls';
+import { randomUUID } from 'crypto';
 
 import { GlobalExceptionFilter } from './common/filters/global-exception.filter';
 import { AppConfig } from './config/app.config';
@@ -36,20 +41,26 @@ async function bootstrap() {
     // 创建 Fastify 适配器，使用自定义日志配置
     const adapter = new FastifyAdapter({
       logger: false, // 保持禁用 Fastify 内置日志，因为我们使用自定义的 PinoLogger
+      genReqId: () => randomUUID(), // 使用 UUID 替代默认的 req-n 格式
     });
 
     // // 创建 NestJS 应用，使用 Fastify 适配器
-    const app = await NestFactory.create(AppModule, adapter, {
-      bufferLogs: true, // 缓存启动日志
-      // logger: false, // 禁用 NestJS 默认日志
-    });
+    const app = await NestFactory.create<NestFastifyApplication>(
+      AppModule,
+      adapter,
+      {
+        bufferLogs: true, // 缓存启动日志
+        // logger: false, // 禁用 NestJS 默认日志
+      },
+    );
 
     const appConfig = app.get<AppConfig>(AppConfig);
 
     // 注册全局异常过滤器
     const httpAdapter = app.get(HttpAdapterHost);
     const i18n = app.get<I18nService<I18nTranslations>>(I18nService);
-    app.useGlobalFilters(new GlobalExceptionFilter(httpAdapter, i18n));
+    const cls = app.get(ClsService);
+    app.useGlobalFilters(new GlobalExceptionFilter(httpAdapter, i18n, cls));
     // 使用自定义日志服务
     const logger = app.get(Logger);
     app.useLogger(logger);
@@ -65,14 +76,6 @@ async function bootstrap() {
     app.setGlobalPrefix(appConfig.server.globalPrefix);
 
     adapter.getInstance().addHook('preHandler', (request, _reply, done) => {
-      // TODO: 打印请求, 需要删除
-      console.log('Request:', {
-        method: request.method,
-        url: request.url,
-        body: request.body,
-        query: request.query,
-        headers: request.headers,
-      });
       if (request.body) {
         (request.raw as any).body = request.body;
       }

@@ -1,10 +1,7 @@
 import { Global, Module, DynamicModule, Inject } from '@nestjs/common';
 import { Provider } from '@nestjs/common/interfaces';
 
-import { APP_INTERCEPTOR } from '@nestjs/core';
 import { ClsModule } from 'nestjs-cls';
-import { ClsService } from 'nestjs-cls';
-import { UnifiedLoggingInterceptor } from './unified.logging.interceptor';
 
 import { createProvidersForDecorated } from './InjectPinoLogger';
 import {
@@ -47,19 +44,7 @@ export class LoggerModule {
           },
         }),
       ],
-      providers: [
-        Logger,
-        ...decorated,
-        PinoLogger,
-        paramsProvider,
-        {
-          provide: APP_INTERCEPTOR,
-          useFactory: (cls: ClsService, logger: PinoLogger) => {
-            return new UnifiedLoggingInterceptor(cls, logger, params);
-          },
-          inject: [ClsService, PinoLogger],
-        },
-      ],
+      providers: [Logger, ...decorated, PinoLogger, paramsProvider],
       exports: [Logger, ...decorated, PinoLogger, paramsProvider],
       global: true,
     };
@@ -102,17 +87,7 @@ export class LoggerModule {
         ...decorated,
         PinoLogger,
         paramsProvider,
-        {
-          provide: APP_INTERCEPTOR,
-          useFactory: async (
-            cls: ClsService,
-            logger: PinoLogger,
-            asyncParams: Params & Partial<LoggerConfig>,
-          ) => {
-            return new UnifiedLoggingInterceptor(cls, logger, asyncParams);
-          },
-          inject: [ClsService, PinoLogger, PARAMS_PROVIDER_TOKEN],
-        },
+
         ...(params.providers || []),
       ],
       exports: [Logger, ...decorated, PinoLogger, paramsProvider],

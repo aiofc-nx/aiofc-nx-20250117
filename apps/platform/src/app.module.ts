@@ -4,7 +4,11 @@ import {
   NestModule,
   RequestMethod,
 } from '@nestjs/common';
-import { LoggerModule } from '@aiofc/pino-logger';
+import {
+  LoggerModule,
+  SimpleLoggingInterceptor,
+  UnifiedLoggingInterceptor,
+} from '@aiofc/pino-logger';
 import { ZodConfigModule } from './config/zod-config.module';
 import { AppController } from './app/app.controller';
 import { AppService } from './app/app.service';
@@ -21,6 +25,7 @@ import {
 } from 'nestjs-i18n';
 import * as path from 'path';
 import { AppConfig } from './config/app.config';
+import { APP_INTERCEPTOR } from '@nestjs/core/constants';
 
 @Module({
   imports: [
@@ -77,7 +82,18 @@ import { AppConfig } from './config/app.config';
     }),
   ],
   controllers: [AppController],
-  providers: [AppConfig, AppService, TenantContextService],
+  providers: [
+    AppConfig,
+    AppService,
+    TenantContextService,
+    {
+      provide: APP_INTERCEPTOR, // nestjs 内置的令牌
+      useClass:
+        process.env.NODE_ENV === 'development'
+          ? UnifiedLoggingInterceptor
+          : SimpleLoggingInterceptor,
+    },
+  ],
   exports: [AppService],
 })
 export class AppModule implements NestModule {
