@@ -1,4 +1,4 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/database/schema
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/database/schema
 
 # apps/platform/src/database/schema
 
@@ -6,19 +6,19 @@
 
 ### NewTenant
 
-Re-exports [NewTenant](tenant.schema/type-aliases/NewTenant.md)
+Re-exports [NewTenant](tenant.schema/index.md#newtenant)
 
 ***
 
 ### NewUser
 
-Re-exports [NewUser](user.schema/type-aliases/NewUser.md)
+Re-exports [NewUser](user.schema/index.md#newuser)
 
 ***
 
 ### Tenant
 
-Re-exports [Tenant](tenant.schema/type-aliases/Tenant.md)
+Re-exports [Tenant](tenant.schema/index.md#tenant)
 
 ***
 
@@ -30,7 +30,7 @@ Re-exports [TenantCategory](tenant.schema/enumerations/TenantCategory.md)
 
 ### tenantRelations
 
-Re-exports [tenantRelations](tenant.schema/variables/tenantRelations.md)
+Re-exports [tenantRelations](tenant.schema/index.md#tenantrelations)
 
 ***
 
@@ -42,19 +42,19 @@ Re-exports [TenantStatus](tenant.schema/enumerations/TenantStatus.md)
 
 ### tenantTable
 
-Re-exports [tenantTable](tenant.schema/variables/tenantTable.md)
+Re-exports [tenantTable](tenant.schema/index.md#tenanttable)
 
 ***
 
 ### User
 
-Re-exports [User](user.schema/type-aliases/User.md)
+Re-exports [User](user.schema/index.md#user)
 
 ***
 
 ### userRelations
 
-Re-exports [userRelations](user.schema/variables/userRelations.md)
+Re-exports [userRelations](user.schema/index.md#userrelations)
 
 ***
 
@@ -66,4 +66,4 @@ Re-exports [UserStatus](user.schema/enumerations/UserStatus.md)
 
 ### userTable
 
-Re-exports [userTable](user.schema/variables/userTable.md)
+Re-exports [userTable](user.schema/index.md#usertable)

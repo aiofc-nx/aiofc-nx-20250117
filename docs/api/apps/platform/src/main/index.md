@@ -1,3 +1,3 @@
-[AIOFC API 文档](../../../../index.md) / apps/platform/src/main
+[@aiofc-nx-2025/source](../../../../index.md) / apps/platform/src/main
 
 # apps/platform/src/main

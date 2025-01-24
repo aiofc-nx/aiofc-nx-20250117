@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [apps/platform/src/config/database.config](../index.md) / DatabaseConfig
+[@aiofc-nx-2025/source](../../../../../../index.md) / [apps/platform/src/config/database.config](../index.md) / DatabaseConfig
 
 # Class: DatabaseConfig
-
-Defined in: [apps/platform/src/config/database.config.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/database.config.ts#L18)
 
 EnvService 类
 
@@ -16,15 +14,15 @@ EnvService 类
 
 ## Extends
 
-- [`ZodEnv`](../../../../../../packages/zod-env/src/lib/zod-env/classes/ZodEnv.md)\<[`DatabaseValidatedConfig`](../../database-z-schema/type-aliases/DatabaseValidatedConfig.md)\>
+- [`ZodEnv`](../../../../../../packages/zod-env/src/lib/zod-env/classes/ZodEnv.md)\<[`DatabaseValidatedConfig`](../../database-z-schema/index.md#databasevalidatedconfig)\>
 
 ## Constructors
 
 ### new DatabaseConfig()
 
-> **new DatabaseConfig**(): [`DatabaseConfig`](DatabaseConfig.md)
-
-Defined in: [apps/platform/src/config/database.config.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/database.config.ts#L19)
+```ts
+new DatabaseConfig(): DatabaseConfig
+```
 
 #### Returns
 
@@ -40,9 +38,9 @@ Defined in: [apps/platform/src/config/database.config.ts:19](https://github.com/
 
 #### Get Signature
 
-> **get** **config**(): `T`
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:73](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L73)
+```ts
+get config(): T
+```
 
 获取验证后的配置对象
 
@@ -62,10 +60,40 @@ Defined in: [packages/zod-env/src/lib/zod-env.ts:73](https://github.com/aiofc-nx
 
 #### Get Signature
 
-> **get** **database**(): `Readonly`\<\{ `host`: `string`; `isolationStrategy`: `"schema"` \| `"row"`; `name`: `string`; `password`: `string`; `pool`: \{ `connect_timeout`: `number`; `idle_timeout`: `number`; `max`: `number`; `max_lifetime`: `number`; `min`: `number`; \}; `port`: `number`; `systemSchema`: `string`; `user`: `string`; \}\>
-
-Defined in: [apps/platform/src/config/database.config.ts:27](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/database.config.ts#L27)
+```ts
+get database(): Readonly<{
+  host: string;
+  isolationStrategy: "schema" | "row";
+  name: string;
+  password: string;
+  pool: {
+     connect_timeout: number;
+     idle_timeout: number;
+     max: number;
+     max_lifetime: number;
+     min: number;
+    };
+  port: number;
+  systemSchema: string;
+  user: string;
+}>
+```
 
 ##### Returns
 
-`Readonly`\<\{ `host`: `string`; `isolationStrategy`: `"schema"` \| `"row"`; `name`: `string`; `password`: `string`; `pool`: \{ `connect_timeout`: `number`; `idle_timeout`: `number`; `max`: `number`; `max_lifetime`: `number`; `min`: `number`; \}; `port`: `number`; `systemSchema`: `string`; `user`: `string`; \}\>
+`Readonly`\<\{
+  `host`: `string`;
+  `isolationStrategy`: `"schema"` \| `"row"`;
+  `name`: `string`;
+  `password`: `string`;
+  `pool`: \{
+     `connect_timeout`: `number`;
+     `idle_timeout`: `number`;
+     `max`: `number`;
+     `max_lifetime`: `number`;
+     `min`: `number`;
+    \};
+  `port`: `number`;
+  `systemSchema`: `string`;
+  `user`: `string`;
+ \}\>

@@ -1,11 +1,21 @@
-[AIOFC API 文档](../../../../../index.md) / packages/pino-logger/src/lib/PinoLogger
+[@aiofc-nx-2025/source](../../../../../index.md) / packages/pino-logger/src/lib/PinoLogger
 
 # packages/pino-logger/src/lib/PinoLogger
 
 ## Classes
 
-- [PinoLogger](classes/PinoLogger.md)
+| Class | Description |
+| ------ | ------ |
+| [PinoLogger](classes/PinoLogger.md) | - |
 
 ## Functions
 
-- [\_\_resetOutOfContextForTests](functions/resetOutOfContextForTests.md)
+### \_\_resetOutOfContextForTests()
+
+```ts
+function __resetOutOfContextForTests(): void
+```
+
+#### Returns
+
+`void`

@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/pino-logger/src/lib/logger](../index.md) / Logger
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/pino-logger/src/lib/logger](../index.md) / Logger
 
 # Class: Logger
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:9](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L9)
 
 ## Implements
 
@@ -12,9 +10,9 @@ Defined in: [packages/pino-logger/src/lib/logger.ts:9](https://github.com/aiofc-
 
 ### new Logger()
 
-> **new Logger**(`logger`, `__namedParameters`): [`Logger`](Logger.md)
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:12](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L12)
+```ts
+new Logger(logger, __namedParameters): Logger
+```
 
 #### Parameters
 
@@ -34,25 +32,28 @@ Defined in: [packages/pino-logger/src/lib/logger.ts:12](https://github.com/aiofc
 
 ### contextName
 
-> `private` `readonly` **contextName**: `string`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:10](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L10)
+```ts
+private readonly contextName: string;
+```
 
 ***
 
 ### logger
 
-> `protected` `readonly` **logger**: [`PinoLogger`](../../PinoLogger/classes/PinoLogger.md)
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L13)
+```ts
+protected readonly logger: PinoLogger;
+```
 
 ## Methods
 
 ### call()
 
-> `private` **call**(`level`, `message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:43](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L43)
+```ts
+private call(
+   level, 
+   message, ...
+   optionalParams): void
+```
 
 #### Parameters
 
@@ -76,9 +77,9 @@ Defined in: [packages/pino-logger/src/lib/logger.ts:43](https://github.com/aiofc
 
 ### debug()
 
-> **debug**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:23](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L23)
+```ts
+debug(message, ...optionalParams): void
+```
 
 Write a 'debug' level log.
 
@@ -98,15 +99,17 @@ Write a 'debug' level log.
 
 #### Implementation of
 
-`LoggerService.debug`
+```ts
+LoggerService.debug
+```
 
 ***
 
 ### error()
 
-> **error**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:35](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L35)
+```ts
+error(message, ...optionalParams): void
+```
 
 Write an 'error' level log.
 
@@ -126,15 +129,17 @@ Write an 'error' level log.
 
 #### Implementation of
 
-`LoggerService.error`
+```ts
+LoggerService.error
+```
 
 ***
 
 ### fatal()
 
-> **fatal**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:39](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L39)
+```ts
+fatal(message, ...optionalParams): void
+```
 
 Write a 'fatal' level log.
 
@@ -154,15 +159,20 @@ Write a 'fatal' level log.
 
 #### Implementation of
 
-`LoggerService.fatal`
+```ts
+LoggerService.fatal
+```
 
 ***
 
 ### isWrongExceptionsHandlerContract()
 
-> `private` **isWrongExceptionsHandlerContract**(`level`, `message`, `params`): `params is [string]`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:88](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L88)
+```ts
+private isWrongExceptionsHandlerContract(
+   level, 
+   message, 
+   params): params is [string]
+```
 
 Unfortunately built-in (not only) `^.*Exception(s?)Handler$` classes call `.error`
 method with not supported contract:
@@ -207,9 +217,9 @@ method with not supported contract:
 
 ### log()
 
-> **log**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:27](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L27)
+```ts
+log(message, ...optionalParams): void
+```
 
 Write a 'log' level log.
 
@@ -229,15 +239,17 @@ Write a 'log' level log.
 
 #### Implementation of
 
-`LoggerService.log`
+```ts
+LoggerService.log
+```
 
 ***
 
 ### verbose()
 
-> **verbose**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L19)
+```ts
+verbose(message, ...optionalParams): void
+```
 
 Write a 'verbose' level log.
 
@@ -257,15 +269,17 @@ Write a 'verbose' level log.
 
 #### Implementation of
 
-`LoggerService.verbose`
+```ts
+LoggerService.verbose
+```
 
 ***
 
 ### warn()
 
-> **warn**(`message`, ...`optionalParams`): `void`
-
-Defined in: [packages/pino-logger/src/lib/logger.ts:31](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/logger.ts#L31)
+```ts
+warn(message, ...optionalParams): void
+```
 
 Write a 'warn' level log.
 
@@ -285,4 +299,6 @@ Write a 'warn' level log.
 
 #### Implementation of
 
-`LoggerService.warn`
+```ts
+LoggerService.warn
+```

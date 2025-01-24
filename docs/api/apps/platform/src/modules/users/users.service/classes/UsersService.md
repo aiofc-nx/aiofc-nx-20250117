@@ -1,16 +1,14 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/modules/users/users.service](../index.md) / UsersService
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/modules/users/users.service](../index.md) / UsersService
 
 # Class: UsersService
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:16](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L16)
 
 ## Constructors
 
 ### new UsersService()
 
-> **new UsersService**(`db`, `tenantContext`): [`UsersService`](UsersService.md)
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:17](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L17)
+```ts
+new UsersService(db, tenantContext): UsersService
+```
 
 #### Parameters
 
@@ -30,25 +28,28 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:17](https://github
 
 ### db
 
-> `private` `readonly` **db**: [`DatabaseService`](../../../../database/services/database.service/classes/DatabaseService.md)
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L18)
+```ts
+private readonly db: DatabaseService;
+```
 
 ***
 
 ### tenantContext
 
-> `protected` `readonly` **tenantContext**: [`TenantContextService`](../../../../database/services/tenant-context.service/classes/TenantContextService.md)
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L19)
+```ts
+protected readonly tenantContext: TenantContextService;
+```
 
 ## Methods
 
 ### changePassword()
 
-> **changePassword**(`id`, `oldPassword`, `newPassword`): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:114](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L114)
+```ts
+changePassword(
+   id, 
+   oldPassword, 
+newPassword): Promise<void>
+```
 
 修改密码
 
@@ -74,9 +75,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:114](https://githu
 
 ### create()
 
-> **create**(`data`, `hashPassword`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:25](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L25)
+```ts
+create(data, hashPassword): Promise<any>
+```
 
 创建新用户
 
@@ -98,9 +99,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:25](https://github
 
 ### delete()
 
-> **delete**(`id`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:140](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L140)
+```ts
+delete(id): Promise<any>
+```
 
 删除用户
 
@@ -118,9 +119,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:140](https://githu
 
 ### deleteMany()
 
-> **deleteMany**(`ids`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:178](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L178)
+```ts
+deleteMany(ids): Promise<any>
+```
 
 批量删除用户
 
@@ -140,9 +141,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:178](https://githu
 
 ### findById()
 
-> **findById**(`id`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:58](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L58)
+```ts
+findById(id): Promise<any>
+```
 
 #### Parameters
 
@@ -158,9 +159,14 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:58](https://github
 
 ### findMany()
 
-> **findMany**(`params`): `Promise`\<\{ `items`: `any`; `page`: `number`; `pageSize`: `number`; `total`: `number`; \}\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:71](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L71)
+```ts
+findMany(params): Promise<{
+  items: any;
+  page: number;
+  pageSize: number;
+  total: number;
+}>
+```
 
 查询用户列表
 
@@ -184,15 +190,20 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:71](https://github
 
 #### Returns
 
-`Promise`\<\{ `items`: `any`; `page`: `number`; `pageSize`: `number`; `total`: `number`; \}\>
+`Promise`\<\{
+  `items`: `any`;
+  `page`: `number`;
+  `pageSize`: `number`;
+  `total`: `number`;
+ \}\>
 
 ***
 
 ### isUsernameExist()
 
-> **isUsernameExist**(`username`, `excludeId`?): `Promise`\<`boolean`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:192](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L192)
+```ts
+isUsernameExist(username, excludeId?): Promise<boolean>
+```
 
 检查用户名是否已存在
 
@@ -218,9 +229,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:192](https://githu
 
 ### update()
 
-> **update**(`id`, `data`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:101](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L101)
+```ts
+update(id, data): Promise<any>
+```
 
 更新用户信息
 
@@ -232,7 +243,25 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:101](https://githu
 
 ##### data
 
-`Partial`\<`Omit`\<\{ `avatar`: `string`; `createdAt`: `Date`; `deletedAt`: `Date`; `department_id`: `string`; `display_name`: `string`; `email`: `string`; `id`: `string`; `last_login_at`: `Date`; `last_login_ip`: `string`; `password`: `string`; `phone`: `string`; `position`: `string`; `remarks`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; `username`: `string`; \}, `"password"` \| `"id"`\>\>
+`Partial`\<`Omit`\<\{
+  `avatar`: `string`;
+  `createdAt`: `Date`;
+  `deletedAt`: `Date`;
+  `department_id`: `string`;
+  `display_name`: `string`;
+  `email`: `string`;
+  `id`: `string`;
+  `last_login_at`: `Date`;
+  `last_login_ip`: `string`;
+  `password`: `string`;
+  `phone`: `string`;
+  `position`: `string`;
+  `remarks`: `string`;
+  `status`: `string`;
+  `tenantId`: `string`;
+  `updatedAt`: `Date`;
+  `username`: `string`;
+ \}, `"password"` \| `"id"`\>\>
 
 #### Returns
 
@@ -242,9 +271,9 @@ Defined in: [apps/platform/src/modules/users/users.service.ts:101](https://githu
 
 ### validateUser()
 
-> **validateUser**(`username`, `password`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.service.ts:154](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.service.ts#L154)
+```ts
+validateUser(username, password): Promise<any>
+```
 
 验证用户凭据
 

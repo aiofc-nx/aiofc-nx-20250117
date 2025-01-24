@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/modules/users/users.service
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/modules/users/users.service
 
 # apps/platform/src/modules/users/users.service
 
 ## Classes
 
-- [UsersService](classes/UsersService.md)
+| Class | Description |
+| ------ | ------ |
+| [UsersService](classes/UsersService.md) | - |

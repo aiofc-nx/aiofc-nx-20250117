@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../index.md) / [apps/platform/src/app.module](../index.md) / AppModule
+[@aiofc-nx-2025/source](../../../../../index.md) / [apps/platform/src/app.module](../index.md) / AppModule
 
 # Class: AppModule
-
-Defined in: [apps/platform/src/app.module.ts:99](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/app.module.ts#L99)
 
 ## Implements
 
@@ -12,7 +10,9 @@ Defined in: [apps/platform/src/app.module.ts:99](https://github.com/aiofc-nx/aio
 
 ### new AppModule()
 
-> **new AppModule**(): [`AppModule`](AppModule.md)
+```ts
+new AppModule(): AppModule
+```
 
 #### Returns
 
@@ -22,9 +22,9 @@ Defined in: [apps/platform/src/app.module.ts:99](https://github.com/aiofc-nx/aio
 
 ### configure()
 
-> **configure**(`consumer`): `void`
-
-Defined in: [apps/platform/src/app.module.ts:100](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/app.module.ts#L100)
+```ts
+configure(consumer): void
+```
 
 #### Parameters
 
@@ -38,4 +38,6 @@ Defined in: [apps/platform/src/app.module.ts:100](https://github.com/aiofc-nx/ai
 
 #### Implementation of
 
-`NestModule.configure`
+```ts
+NestModule.configure
+```

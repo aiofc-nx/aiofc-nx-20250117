@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/zod-env/src/lib/z-yaml-loader](../index.md) / YamlFileOptions
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/zod-env/src/lib/z-yaml-loader](../index.md) / YamlFileOptions
 
 # Interface: YamlFileOptions
-
-Defined in: [packages/zod-env/src/lib/z-yaml-loader.ts:25](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/z-yaml-loader.ts#L25)
 
 接口用于描述配置文件（yaml）的设置选项
 
@@ -29,9 +27,9 @@ const options: YamlFileOptions = {
 
 ### configDir?
 
-> `optional` **configDir**: `string`
-
-Defined in: [packages/zod-env/src/lib/z-yaml-loader.ts:30](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/z-yaml-loader.ts#L30)
+```ts
+optional configDir: string;
+```
 
 配置文件目录路径
 
@@ -45,9 +43,9 @@ process.cwd()/assets
 
 ### configFilePrefix
 
-> **configFilePrefix**: `string`
-
-Defined in: [packages/zod-env/src/lib/z-yaml-loader.ts:36](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/z-yaml-loader.ts#L36)
+```ts
+configFilePrefix: string;
+```
 
 配置文件名称前缀
 

@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/app/app.controller
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/app/app.controller
 
 # apps/platform/src/app/app.controller
 
 ## Classes
 
-- [AppController](classes/AppController.md)
+| Class | Description |
+| ------ | ------ |
+| [AppController](classes/AppController.md) | - |

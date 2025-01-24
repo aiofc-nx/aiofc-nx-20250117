@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/exceptions/validation.exception
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/exceptions/validation.exception
 
 # apps/platform/src/exceptions/validation.exception
 
 ## Classes
 
-- [ValidationException](classes/ValidationException.md)
+| Class | Description |
+| ------ | ------ |
+| [ValidationException](classes/ValidationException.md) | 验证异常类 |

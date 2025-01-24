@@ -1,4 +1,4 @@
-[AIOFC API 文档](../../../index.md) / packages/pino-logger/src
+[@aiofc-nx-2025/source](../../../index.md) / packages/pino-logger/src
 
 # packages/pino-logger/src
 
@@ -6,37 +6,37 @@
 
 ### \_\_resetOutOfContextForTests
 
-Re-exports [__resetOutOfContextForTests](lib/PinoLogger/functions/resetOutOfContextForTests.md)
+Re-exports [__resetOutOfContextForTests](lib/PinoLogger/index.md#resetoutofcontextfortests)
 
 ***
 
 ### createProvidersForDecorated
 
-Re-exports [createProvidersForDecorated](lib/InjectPinoLogger/functions/createProvidersForDecorated.md)
+Re-exports [createProvidersForDecorated](lib/InjectPinoLogger/index.md#createprovidersfordecorated)
 
 ***
 
 ### defaultConfig
 
-Re-exports [defaultConfig](lib/interfaces/logger.config/variables/defaultConfig.md)
+Re-exports [defaultConfig](lib/interfaces/logger.config/index.md#defaultconfig)
 
 ***
 
 ### getLoggerToken
 
-Re-exports [getLoggerToken](lib/InjectPinoLogger/functions/getLoggerToken.md)
+Re-exports [getLoggerToken](lib/InjectPinoLogger/index.md#getloggertoken)
 
 ***
 
 ### InjectPinoLogger
 
-Re-exports [InjectPinoLogger](lib/InjectPinoLogger/functions/InjectPinoLogger.md)
+Re-exports [InjectPinoLogger](lib/InjectPinoLogger/index.md#injectpinologger)
 
 ***
 
 ### isPassedLogger
 
-Re-exports [isPassedLogger](lib/params/functions/isPassedLogger.md)
+Re-exports [isPassedLogger](lib/params/index.md#ispassedlogger)
 
 ***
 
@@ -72,13 +72,13 @@ Re-exports [Params](lib/params/interfaces/Params.md)
 
 ### PARAMS\_PROVIDER\_TOKEN
 
-Re-exports [PARAMS_PROVIDER_TOKEN](lib/params/variables/PARAMS_PROVIDER_TOKEN.md)
+Re-exports [PARAMS_PROVIDER_TOKEN](lib/params/index.md#params-provider-token)
 
 ***
 
 ### PassedLogger
 
-Re-exports [PassedLogger](lib/params/type-aliases/PassedLogger.md)
+Re-exports [PassedLogger](lib/params/index.md#passedlogger)
 
 ***
 

@@ -1,16 +1,14 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/modules/users/users.controller](../index.md) / UsersController
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/modules/users/users.controller](../index.md) / UsersController
 
 # Class: UsersController
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L18)
 
 ## Constructors
 
 ### new UsersController()
 
-> **new UsersController**(`usersService`): [`UsersController`](UsersController.md)
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L19)
+```ts
+new UsersController(usersService): UsersController
+```
 
 #### Parameters
 
@@ -26,17 +24,20 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:19](https://git
 
 ### usersService
 
-> `private` `readonly` **usersService**: [`UsersService`](../../users.service/classes/UsersService.md)
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L19)
+```ts
+private readonly usersService: UsersService;
+```
 
 ## Methods
 
 ### changePassword()
 
-> **changePassword**(`id`, `oldPassword`, `newPassword`): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:51](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L51)
+```ts
+changePassword(
+   id, 
+   oldPassword, 
+newPassword): Promise<void>
+```
 
 #### Parameters
 
@@ -60,9 +61,9 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:51](https://git
 
 ### checkUsername()
 
-> **checkUsername**(`username`, `excludeId`?): `Promise`\<`boolean`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:73](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L73)
+```ts
+checkUsername(username, excludeId?): Promise<boolean>
+```
 
 #### Parameters
 
@@ -82,9 +83,9 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:73](https://git
 
 ### create()
 
-> **create**(`data`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:23](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L23)
+```ts
+create(data): Promise<any>
+```
 
 #### Parameters
 
@@ -100,9 +101,9 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:23](https://git
 
 ### delete()
 
-> **delete**(`id`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:61](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L61)
+```ts
+delete(id): Promise<any>
+```
 
 #### Parameters
 
@@ -118,9 +119,9 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:61](https://git
 
 ### deleteMany()
 
-> **deleteMany**(`ids`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:67](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L67)
+```ts
+deleteMany(ids): Promise<any>
+```
 
 #### Parameters
 
@@ -136,9 +137,9 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:67](https://git
 
 ### findById()
 
-> **findById**(`id`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:39](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L39)
+```ts
+findById(id): Promise<any>
+```
 
 #### Parameters
 
@@ -154,9 +155,17 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:39](https://git
 
 ### findMany()
 
-> **findMany**(`page`?, `pageSize`?, `username`?): `Promise`\<\{ `items`: `any`; `page`: `number`; `pageSize`: `number`; `total`: `number`; \}\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:29](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L29)
+```ts
+findMany(
+   page?, 
+   pageSize?, 
+   username?): Promise<{
+  items: any;
+  page: number;
+  pageSize: number;
+  total: number;
+}>
+```
 
 #### Parameters
 
@@ -174,15 +183,20 @@ Defined in: [apps/platform/src/modules/users/users.controller.ts:29](https://git
 
 #### Returns
 
-`Promise`\<\{ `items`: `any`; `page`: `number`; `pageSize`: `number`; `total`: `number`; \}\>
+`Promise`\<\{
+  `items`: `any`;
+  `page`: `number`;
+  `pageSize`: `number`;
+  `total`: `number`;
+ \}\>
 
 ***
 
 ### update()
 
-> **update**(`id`, `data`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/modules/users/users.controller.ts:45](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/users/users.controller.ts#L45)
+```ts
+update(id, data): Promise<any>
+```
 
 #### Parameters
 

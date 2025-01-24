@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/pino-logger/src/lib/simple.logging.interceptor](../index.md) / SimpleLoggingInterceptor
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/pino-logger/src/lib/simple.logging.interceptor](../index.md) / SimpleLoggingInterceptor
 
 # Class: SimpleLoggingInterceptor
-
-Defined in: packages/pino-logger/src/lib/simple.logging.interceptor.ts:11
 
 ## Implements
 
@@ -12,7 +10,9 @@ Defined in: packages/pino-logger/src/lib/simple.logging.interceptor.ts:11
 
 ### new SimpleLoggingInterceptor()
 
-> **new SimpleLoggingInterceptor**(): [`SimpleLoggingInterceptor`](SimpleLoggingInterceptor.md)
+```ts
+new SimpleLoggingInterceptor(): SimpleLoggingInterceptor
+```
 
 #### Returns
 
@@ -22,9 +22,9 @@ Defined in: packages/pino-logger/src/lib/simple.logging.interceptor.ts:11
 
 ### intercept()
 
-> **intercept**(`context`, `next`): `Observable`\<`any`\>
-
-Defined in: packages/pino-logger/src/lib/simple.logging.interceptor.ts:12
+```ts
+intercept(context, next): Observable<any>
+```
 
 Method to implement a custom interceptor.
 
@@ -50,4 +50,6 @@ a reference to the `CallHandler`, which provides access to an
 
 #### Implementation of
 
-`NestInterceptor.intercept`
+```ts
+NestInterceptor.intercept
+```

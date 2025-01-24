@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [apps/platform/src/exceptions/validation.exception](../index.md) / ValidationException
+[@aiofc-nx-2025/source](../../../../../../index.md) / [apps/platform/src/exceptions/validation.exception](../index.md) / ValidationException
 
 # Class: ValidationException
-
-Defined in: [apps/platform/src/exceptions/validation.exception.ts:20](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/exceptions/validation.exception.ts#L20)
 
 验证异常类
 
@@ -32,9 +30,9 @@ throw new ValidationException(ErrorCode.V001, '用户名不能为空');
 
 ### new ValidationException()
 
-> **new ValidationException**(`error`, `message`?): [`ValidationException`](ValidationException.md)
-
-Defined in: [apps/platform/src/exceptions/validation.exception.ts:21](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/exceptions/validation.exception.ts#L21)
+```ts
+new ValidationException(error, message?): ValidationException
+```
 
 #### Parameters
 
@@ -52,4 +50,6 @@ Defined in: [apps/platform/src/exceptions/validation.exception.ts:21](https://gi
 
 #### Overrides
 
-`BadRequestException.constructor`
+```ts
+BadRequestException.constructor
+```

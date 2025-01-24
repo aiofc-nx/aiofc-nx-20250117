@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/common/filters/global-exception.filter](../index.md) / GlobalExceptionFilter
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/common/filters/global-exception.filter](../index.md) / GlobalExceptionFilter
 
 # Class: GlobalExceptionFilter
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:55](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L55)
 
 全局异常过滤器
 
@@ -29,9 +27,12 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:55](htt
 
 ### new GlobalExceptionFilter()
 
-> **new GlobalExceptionFilter**(`httpAdapterHost`, `i18n`, `cls`): [`GlobalExceptionFilter`](GlobalExceptionFilter.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:59](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L59)
+```ts
+new GlobalExceptionFilter(
+   httpAdapterHost, 
+   i18n, 
+   cls): GlobalExceptionFilter
+```
 
 #### Parameters
 
@@ -41,7 +42,7 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:59](htt
 
 ##### i18n
 
-`I18nService`\<[`I18nTranslations`](../../../../generated/i18n.generated/type-aliases/I18nTranslations.md)\>
+`I18nService`\<[`I18nTranslations`](../../../../generated/i18n.generated/index.md#i18ntranslations)\>
 
 ##### cls
 
@@ -53,59 +54,63 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:59](htt
 
 #### Overrides
 
-`BaseExceptionFilter.constructor`
+```ts
+BaseExceptionFilter.constructor
+```
 
 ## Properties
 
 ### cls
 
-> `private` `readonly` **cls**: `ClsService`
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:62](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L62)
+```ts
+private readonly cls: ClsService;
+```
 
 ***
 
 ### debug
 
-> `private` **debug**: `boolean` = `false`
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:56](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L56)
+```ts
+private debug: boolean = false;
+```
 
 ***
 
 ### httpAdapterHost
 
-> `protected` `readonly` **httpAdapterHost**: `HttpAdapterHost`
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:60](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L60)
+```ts
+protected readonly httpAdapterHost: HttpAdapterHost;
+```
 
 #### Inherited from
 
-`BaseExceptionFilter.httpAdapterHost`
+```ts
+BaseExceptionFilter.httpAdapterHost
+```
 
 ***
 
 ### i18n
 
-> `private` `readonly` **i18n**: `I18nService`\<[`I18nTranslations`](../../../../generated/i18n.generated/type-aliases/I18nTranslations.md)\>
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:61](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L61)
+```ts
+private readonly i18n: I18nService<I18nTranslations>;
+```
 
 ***
 
 ### logger
 
-> `private` `readonly` **logger**: [`Logger`](../../../../../../../packages/pino-logger/src/lib/logger/classes/Logger.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:57](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L57)
+```ts
+private readonly logger: Logger;
+```
 
 ## Methods
 
 ### catch()
 
-> **catch**(`exception`, `host`): `void`
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:80](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L80)
+```ts
+catch(exception, host): void
+```
 
 捕获并处理异常的主要方法
 
@@ -129,15 +134,17 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:80](htt
 
 #### Overrides
 
-`BaseExceptionFilter.catch`
+```ts
+BaseExceptionFilter.catch
+```
 
 ***
 
 ### extractValidationErrorDetails()
 
-> `private` **extractValidationErrorDetails**(`errors`): [`ErrorDetailDto`](../../../dto/error-detail.dto/classes/ErrorDetailDto.md)[]
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:276](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L276)
+```ts
+private extractValidationErrorDetails(errors): ErrorDetailDto[]
+```
 
 从验证错误数组中提取错误详情
 
@@ -161,9 +168,9 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:276](ht
 
 ### getPostgresErrorMessage()
 
-> `private` **getPostgresErrorMessage**(`error`): `string`
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:221](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L221)
+```ts
+private getPostgresErrorMessage(error): string
+```
 
 #### Parameters
 
@@ -179,9 +186,9 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:221](ht
 
 ### handleError()
 
-> `private` **handleError**(`error`): [`ErrorDto`](../../../dto/error.dto/classes/ErrorDto.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:254](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L254)
+```ts
+private handleError(error): ErrorDto
+```
 
 处理通用错误
 
@@ -205,9 +212,9 @@ Error异常对象
 
 ### handleHttpException()
 
-> `private` **handleHttpException**(`exception`): [`ErrorDto`](../../../dto/error.dto/classes/ErrorDto.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:188](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L188)
+```ts
+private handleHttpException(exception): ErrorDto
+```
 
 处理HTTP异常
 
@@ -229,9 +236,9 @@ HttpException异常对象
 
 ### handlePostgresError()
 
-> `private` **handlePostgresError**(`error`): [`ErrorDto`](../../../dto/error.dto/classes/ErrorDto.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:205](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L205)
+```ts
+private handlePostgresError(error): ErrorDto
+```
 
 处理 Postgres 数据库错误
 
@@ -249,9 +256,9 @@ Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:205](ht
 
 ### handleUnprocessableEntityException()
 
-> `private` **handleUnprocessableEntityException**(`exception`): [`ErrorDto`](../../../dto/error.dto/classes/ErrorDto.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:134](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L134)
+```ts
+private handleUnprocessableEntityException(exception): ErrorDto
+```
 
 处理实体验证异常
 
@@ -278,9 +285,9 @@ UnprocessableEntityException异常对象
 
 ### handleValidationException()
 
-> `private` **handleValidationException**(`exception`): [`ErrorDto`](../../../dto/error.dto/classes/ErrorDto.md)
-
-Defined in: [apps/platform/src/common/filters/global-exception.filter.ts:159](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/filters/global-exception.filter.ts#L159)
+```ts
+private handleValidationException(exception): ErrorDto
+```
 
 处理自定义验证异常
 

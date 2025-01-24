@@ -2,32 +2,21 @@
   "$schema": "https://typedoc.org/schema.json",
   "includeVersion": true,
   "tsconfig": "./tsconfig.base.json",
-  "entryPointStrategy": "expand",
   "entryPoints": [
     "./apps/*/src/**/!(*.spec|*.test).ts",
     "./packages/*/src/**/!(*.spec|*.test).ts"
   ],
-  "projectDocuments": ["docs/guides/**/*.md"],
   "out": "./docs/api",
-  "name": "AIOFC API 文档",
-  // "theme": "default",
-  // "theme": "dumi",
+  "outputFileStrategy": "members",
+  "membersWithOwnFile": ["Class", "Enum", "Interface"],
+  // "publicPath": "http://localhost:5173/",
   "excludePrivate": false,
   "excludeProtected": false,
   "excludeExternals": false,
   // "plugin": ["typedoc-plugin-merge-modules", "typedoc-plugin-markdown"],
   "plugin": ["typedoc-plugin-markdown", "typedoc-vitepress-theme"],
-  // "plugin": ["@yookue/typedoc-theme-dumi"],
   "skipErrorChecking": true,
-  "categorizeByGroup": true,
-  "categoryOrder": [
-    "Classes",
-    "Interfaces",
-    "Enums",
-    "Functions",
-    "Variables",
-    "*"
-  ],
+
   "exclude": [
     "**/dist/**",
     "**/node_modules/**",
@@ -37,46 +26,11 @@
     "**/jest.preset.js",
     "**/__tests__/**"
   ],
-  "validation": {
-    "invalidLink": false,
-    "notDocumented": false
-  },
   "intentionallyNotExported": ["EnvSchema", "EnvVariables"],
   // "readme": "docs/guides/readme.md",
   "readme": "none",
-  "logLevel": "Verbose",
-  "navigationLinks": {
-    "GitHub": "https://github.com/yookue/typedoc-theme-dumi",
-    "Yookue": "https://yookue.com"
-  },
-  // "logoImage": "https://yookue.github.io/assets/ico/logo-icon.svg",
-  // "logoWidth": 32,
-  // "logoHeight": 32,
-  // "logoTitle": "AIOFC API 文档",
-  // "navigationLinkTargets": {
-  //   "GitHub": "_blank",
-  //   "Yookue": "_blank"
-  // },
-
-  "searchCategoryBoosts": {
-    "Component": 2,
-    "Model": 1.2
-  },
-  "searchGroupBoosts": {
-    "Classes": 1.5
-  },
-  "highlightLanguages": [
-    "typescript",
-    "tsx",
-    "css",
-    "json",
-    "jsonc",
-    "python",
-    "yaml",
-    "markdown"
-  ],
-  "markdownItOptions": {
-    "html": true
-  }
+  "indexFormat": "table",
+  "useCodeBlocks": true,
+  "disableSources": true
   // "lang": "zh"
 }

@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/modules/tenant/tenant.module
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/modules/tenant/tenant.module
 
 # apps/platform/src/modules/tenant/tenant.module
 
 ## Classes
 
-- [TenantModule](classes/TenantModule.md)
+| Class | Description |
+| ------ | ------ |
+| [TenantModule](classes/TenantModule.md) | - |

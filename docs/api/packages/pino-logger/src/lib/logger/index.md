@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / packages/pino-logger/src/lib/logger
+[@aiofc-nx-2025/source](../../../../../index.md) / packages/pino-logger/src/lib/logger
 
 # packages/pino-logger/src/lib/logger
 
 ## Classes
 
-- [Logger](classes/Logger.md)
+| Class | Description |
+| ------ | ------ |
+| [Logger](classes/Logger.md) | - |

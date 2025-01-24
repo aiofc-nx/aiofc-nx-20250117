@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [packages/pino-logger/src/lib/interfaces/logger.config](../index.md) / LoggerConfig
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [packages/pino-logger/src/lib/interfaces/logger.config](../index.md) / LoggerConfig
 
 # Interface: LoggerConfig
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:4](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L4)
 
 日志拦截器配置接口
 
@@ -10,9 +8,9 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:4](https:/
 
 ### ignorePaths?
 
-> `optional` **ignorePaths**: (`string` \| `RegExp`)[]
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:8](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L8)
+```ts
+optional ignorePaths: (string | RegExp)[];
+```
 
 不需要记录日志的路径
 
@@ -20,9 +18,9 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:8](https:/
 
 ### logRequestBody
 
-> **logRequestBody**: `boolean`
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:23](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L23)
+```ts
+logRequestBody: boolean;
+```
 
 是否记录请求体
 
@@ -30,9 +28,9 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:23](https:
 
 ### logResponseBody
 
-> **logResponseBody**: `boolean`
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:28](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L28)
+```ts
+logResponseBody: boolean;
+```
 
 是否记录响应体
 
@@ -40,9 +38,9 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:28](https:
 
 ### sensitiveFields
 
-> **sensitiveFields**: `string`[]
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L18)
+```ts
+sensitiveFields: string[];
+```
 
 需要脱敏的字段
 
@@ -50,9 +48,9 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:18](https:
 
 ### sensitiveHeaders
 
-> **sensitiveHeaders**: `string`[]
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L13)
+```ts
+sensitiveHeaders: string[];
+```
 
 需要脱敏的请求头
 
@@ -60,118 +58,162 @@ Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:13](https:
 
 ### trace?
 
-> `optional` **trace**: `object`
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:30](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L30)
+```ts
+optional trace: object;
+```
 
 #### cache?
 
-> `optional` **cache**: `object`
+```ts
+optional cache: object;
+```
 
 缓存追踪配置
 
 ##### cache.enabled
 
-> **enabled**: `boolean`
+```ts
+enabled: boolean;
+```
 
 是否启用缓存追踪
 
 ##### cache.logKeys
 
-> **logKeys**: `boolean`
+```ts
+logKeys: boolean;
+```
 
 是否记录缓存键
 
 ##### cache.logValues
 
-> **logValues**: `boolean`
+```ts
+logValues: boolean;
+```
 
 是否记录缓存值
 
 #### callStack?
 
-> `optional` **callStack**: `boolean`
+```ts
+optional callStack: boolean;
+```
 
 是否记录调用链路
 
 #### enabled
 
-> **enabled**: `boolean`
+```ts
+enabled: boolean;
+```
 
 #### parentIdHeader
 
-> **parentIdHeader**: `string`
+```ts
+parentIdHeader: string;
+```
 
 #### resources?
 
-> `optional` **resources**: `boolean`
+```ts
+optional resources: boolean;
+```
 
 是否记录系统资源使用
 
 #### sampleRate?
 
-> `optional` **sampleRate**: `number`
+```ts
+optional sampleRate: number;
+```
 
 采样率 (0-1)
 
 #### timing?
 
-> `optional` **timing**: `boolean`
+```ts
+optional timing: boolean;
+```
 
 是否记录请求耗时分布
 
 #### traceIdHeader
 
-> **traceIdHeader**: `string`
+```ts
+traceIdHeader: string;
+```
 
 ***
 
 ### transport?
 
-> `optional` **transport**: `object`
-
-Defined in: [packages/pino-logger/src/lib/interfaces/logger.config.ts:69](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/interfaces/logger.config.ts#L69)
+```ts
+optional transport: object;
+```
 
 #### options
 
-> **options**: `object`
+```ts
+options: object;
+```
 
 ##### options.colorize
 
-> **colorize**: `boolean`
+```ts
+colorize: boolean;
+```
 
 ##### options.ignore
 
-> **ignore**: `string`
+```ts
+ignore: string;
+```
 
 ##### options.levelFirst
 
-> **levelFirst**: `boolean`
+```ts
+levelFirst: boolean;
+```
 
 ##### options.messageFormat
 
-> **messageFormat**: `string`
+```ts
+messageFormat: string;
+```
 
 ##### options.messageKey
 
-> **messageKey**: `string`
+```ts
+messageKey: string;
+```
 
 ##### options.minimumLevel
 
-> **minimumLevel**: `string`
+```ts
+minimumLevel: string;
+```
 
 ##### options.singleLine
 
-> **singleLine**: `boolean`
+```ts
+singleLine: boolean;
+```
 
 ##### options.sync
 
-> **sync**: `boolean`
+```ts
+sync: boolean;
+```
 
 ##### options.translateTime
 
-> **translateTime**: `string`
+```ts
+translateTime: string;
+```
 
 #### target
 
-> **target**: `string`
+```ts
+target: string;
+```

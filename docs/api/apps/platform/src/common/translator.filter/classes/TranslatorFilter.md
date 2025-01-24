@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [apps/platform/src/common/translator.filter](../index.md) / TranslatorFilter
+[@aiofc-nx-2025/source](../../../../../../index.md) / [apps/platform/src/common/translator.filter](../index.md) / TranslatorFilter
 
 # Class: TranslatorFilter
-
-Defined in: [apps/platform/src/common/translator.filter.ts:12](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.filter.ts#L12)
 
 ## Implements
 
@@ -12,9 +10,9 @@ Defined in: [apps/platform/src/common/translator.filter.ts:12](https://github.co
 
 ### new TranslatorFilter()
 
-> **new TranslatorFilter**(`translator`): [`TranslatorFilter`](TranslatorFilter.md)
-
-Defined in: [apps/platform/src/common/translator.filter.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.filter.ts#L13)
+```ts
+new TranslatorFilter(translator): TranslatorFilter
+```
 
 #### Parameters
 
@@ -30,17 +28,17 @@ Defined in: [apps/platform/src/common/translator.filter.ts:13](https://github.co
 
 ### translator
 
-> `private` **translator**: [`TranslatorService`](../../translator.service/classes/TranslatorService.md)
-
-Defined in: [apps/platform/src/common/translator.filter.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.filter.ts#L13)
+```ts
+private translator: TranslatorService;
+```
 
 ## Methods
 
 ### catch()
 
-> **catch**(`exception`, `host`): `void`
-
-Defined in: [apps/platform/src/common/translator.filter.ts:14](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.filter.ts#L14)
+```ts
+catch(exception, host): void
+```
 
 Method to implement a custom exception filter.
 
@@ -65,4 +63,6 @@ the in-flight request
 
 #### Implementation of
 
-`ExceptionFilter.catch`
+```ts
+ExceptionFilter.catch
+```

@@ -1,16 +1,17 @@
-[AIOFC API 文档](../../../../../../index.md) / [apps/platform/src/common/translator.service](../index.md) / TranslatorService
+[@aiofc-nx-2025/source](../../../../../../index.md) / [apps/platform/src/common/translator.service](../index.md) / TranslatorService
 
 # Class: TranslatorService
-
-Defined in: [apps/platform/src/common/translator.service.ts:7](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L7)
 
 ## Constructors
 
 ### new TranslatorService()
 
-> **new TranslatorService**(`defaultLanguage`, `default_source`, `keyExtractor`): [`TranslatorService`](TranslatorService.md)
-
-Defined in: [apps/platform/src/common/translator.service.ts:9](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L9)
+```ts
+new TranslatorService(
+   defaultLanguage, 
+   default_source, 
+   keyExtractor): TranslatorService
+```
 
 #### Parameters
 
@@ -34,9 +35,9 @@ Defined in: [apps/platform/src/common/translator.service.ts:9](https://github.co
 
 ### \_keyExtractor()
 
-> `readonly` **\_keyExtractor**: (`req`) => `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:8](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L8)
+```ts
+readonly _keyExtractor: (req) => string;
+```
 
 #### Parameters
 
@@ -52,25 +53,25 @@ Defined in: [apps/platform/src/common/translator.service.ts:8](https://github.co
 
 ### default\_source
 
-> `private` `readonly` **default\_source**: `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:11](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L11)
+```ts
+private readonly default_source: string;
+```
 
 ***
 
 ### defaultLanguage
 
-> `private` **defaultLanguage**: `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:10](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L10)
+```ts
+private defaultLanguage: string;
+```
 
 ***
 
 ### keyExtractor()
 
-> `private` `readonly` **keyExtractor**: (`req`) => `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L13)
+```ts
+private readonly keyExtractor: (req) => string;
+```
 
 #### Parameters
 
@@ -86,21 +87,23 @@ Defined in: [apps/platform/src/common/translator.service.ts:13](https://github.c
 
 ### langs
 
-> `private` **langs**: `object` = `{}`
-
-Defined in: [apps/platform/src/common/translator.service.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L19)
+```ts
+private langs: object = {};
+```
 
 #### Index Signature
 
-\[`lang`: `string`\]: `object`
+```ts
+[lang: string]: object
+```
 
 ## Methods
 
 ### findLangs()
 
-> `private` **findLangs**(): `void`
-
-Defined in: [apps/platform/src/common/translator.service.ts:29](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L29)
+```ts
+private findLangs(): void
+```
 
 #### Returns
 
@@ -110,9 +113,9 @@ Defined in: [apps/platform/src/common/translator.service.ts:29](https://github.c
 
 ### getLangs()
 
-> **getLangs**(): `string`[]
-
-Defined in: [apps/platform/src/common/translator.service.ts:21](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L21)
+```ts
+getLangs(): string[]
+```
 
 #### Returns
 
@@ -122,9 +125,9 @@ Defined in: [apps/platform/src/common/translator.service.ts:21](https://github.c
 
 ### getSourceFolderPath()
 
-> `private` **getSourceFolderPath**(): `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:25](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L25)
+```ts
+private getSourceFolderPath(): string
+```
 
 #### Returns
 
@@ -134,9 +137,9 @@ Defined in: [apps/platform/src/common/translator.service.ts:25](https://github.c
 
 ### translate()
 
-> **translate**(`key`, `options`?): `string`
-
-Defined in: [apps/platform/src/common/translator.service.ts:64](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/translator.service.ts#L64)
+```ts
+translate(key, options?): string
+```
 
 #### Parameters
 

@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [apps/platform/src/config/app.config](../index.md) / AppConfig
+[@aiofc-nx-2025/source](../../../../../../index.md) / [apps/platform/src/config/app.config](../index.md) / AppConfig
 
 # Class: AppConfig
-
-Defined in: [apps/platform/src/config/app.config.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/app.config.ts#L18)
 
 EnvService 类
 
@@ -16,15 +14,15 @@ EnvService 类
 
 ## Extends
 
-- [`ZodEnv`](../../../../../../packages/zod-env/src/lib/zod-env/classes/ZodEnv.md)\<[`AppValidatedConfig`](../../app-z-schema/type-aliases/AppValidatedConfig.md)\>
+- [`ZodEnv`](../../../../../../packages/zod-env/src/lib/zod-env/classes/ZodEnv.md)\<[`AppValidatedConfig`](../../app-z-schema/index.md#appvalidatedconfig)\>
 
 ## Constructors
 
 ### new AppConfig()
 
-> **new AppConfig**(): [`AppConfig`](AppConfig.md)
-
-Defined in: [apps/platform/src/config/app.config.ts:19](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/app.config.ts#L19)
+```ts
+new AppConfig(): AppConfig
+```
 
 #### Returns
 
@@ -40,9 +38,9 @@ Defined in: [apps/platform/src/config/app.config.ts:19](https://github.com/aiofc
 
 #### Get Signature
 
-> **get** **config**(): `T`
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:73](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L73)
+```ts
+get config(): T
+```
 
 获取验证后的配置对象
 
@@ -62,13 +60,17 @@ Defined in: [packages/zod-env/src/lib/zod-env.ts:73](https://github.com/aiofc-nx
 
 #### Get Signature
 
-> **get** **logger**(): `Readonly`\<\{ `trackingIdHeader`: `string`; \}\>
-
-Defined in: [apps/platform/src/config/app.config.ts:30](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/app.config.ts#L30)
+```ts
+get logger(): Readonly<{
+  trackingIdHeader: string;
+}>
+```
 
 ##### Returns
 
-`Readonly`\<\{ `trackingIdHeader`: `string`; \}\>
+`Readonly`\<\{
+  `trackingIdHeader`: `string`;
+ \}\>
 
 ***
 
@@ -76,10 +78,16 @@ Defined in: [apps/platform/src/config/app.config.ts:30](https://github.com/aiofc
 
 #### Get Signature
 
-> **get** **server**(): `Readonly`\<\{ `globalPrefix`: `string`; `port`: `number`; \}\>
-
-Defined in: [apps/platform/src/config/app.config.ts:26](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/config/app.config.ts#L26)
+```ts
+get server(): Readonly<{
+  globalPrefix: string;
+  port: number;
+}>
+```
 
 ##### Returns
 
-`Readonly`\<\{ `globalPrefix`: `string`; `port`: `number`; \}\>
+`Readonly`\<\{
+  `globalPrefix`: `string`;
+  `port`: `number`;
+ \}\>

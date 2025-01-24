@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/config/zod-config.module
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/config/zod-config.module
 
 # apps/platform/src/config/zod-config.module
 
 ## Classes
 
-- [ZodConfigModule](classes/ZodConfigModule.md)
+| Class | Description |
+| ------ | ------ |
+| [ZodConfigModule](classes/ZodConfigModule.md) | ZodConfigModule |

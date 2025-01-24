@@ -225,6 +225,9 @@ importers:
       '@commitlint/config-nx-scopes':
         specifier: ^19.5.0
         version: 19.5.0(nx@20.0.0-rc.0)
+      '@enio.ai/typedoc':
+        specifier: 1.0.8
+        version: 1.0.8(nx@20.0.0-rc.0)(typedoc-plugin-rename-defaults@0.6.7)(typedoc-theme-hierarchy@3.2.1)(typedoc@0.27.6)(typescript@5.7.3)
       '@eslint/js':
         specifier: ~8.57.0
         version: 8.57.1
@@ -339,9 +342,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^8.16.0
         version: 8.20.0(eslint@9.16.0)(typescript@5.7.3)
-      '@yookue/typedoc-theme-dumi':
-        specifier: ^0.3.0
-        version: 0.3.0(typescript@5.7.3)
       change-case:
         specifier: 4.1.2
         version: 4.1.2
@@ -396,15 +396,9 @@ importers:
       typedoc:
         specifier: ^0.27.6
         version: 0.27.6(typescript@5.7.3)
-      typedoc-default-themes:
-        specifier: ^0.12.10
-        version: 0.12.10
       typedoc-plugin-markdown:
         specifier: ^4.4.1
         version: 4.4.1(typedoc@0.27.6)
-      typedoc-plugin-merge-modules:
-        specifier: ^6.1.0
-        version: 6.1.0(typedoc@0.27.6)
       typedoc-vitepress-theme:
         specifier: ^1.1.2
         version: 1.1.2(typedoc-plugin-markdown@4.4.1)
@@ -2268,6 +2262,23 @@ packages:
     resolution: {integrity: sha512-iIBu7mwkq4UQGeMEM8bLwNK962nXdhodeScX4slfQnRhEMMzvYivHhutCIk8uojvmASXXPC2WNEjwxFWk72Oqw==}
     dependencies:
       tslib: 2.8.1
+    dev: true
+
+  /@enio.ai/typedoc@1.0.8(nx@20.0.0-rc.0)(typedoc-plugin-rename-defaults@0.6.7)(typedoc-theme-hierarchy@3.2.1)(typedoc@0.27.6)(typescript@5.7.3):
+    resolution: {integrity: sha512-oZtYpvAXYEnrV/b8KD2HMdE3upHfW0HN5Fh9BD7LXIvoA7f2vEJK2chBT4c3Tb/ZLdy9UwNmH288sP+z/7pVTg==}
+    peerDependencies:
+      typedoc: ^0.23.26
+      typedoc-plugin-rename-defaults: ^0.6.4
+      typedoc-theme-hierarchy: ^3.0.0
+    dependencies:
+      '@nrwl/devkit': 15.8.5(nx@20.0.0-rc.0)(typescript@5.7.3)
+      tslib: 2.5.0
+      typedoc: 0.27.6(typescript@5.7.3)
+      typedoc-plugin-rename-defaults: 0.6.7(typedoc@0.27.6)
+      typedoc-theme-hierarchy: 3.2.1(typedoc@0.27.6)
+    transitivePeerDependencies:
+      - nx
+      - typescript
     dev: true
 
   /@esbuild-kit/core-utils@3.3.2:
@@ -4277,6 +4288,22 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.18.0
 
+  /@nrwl/devkit@15.8.5(nx@20.0.0-rc.0)(typescript@5.7.3):
+    resolution: {integrity: sha512-NgpD1I1BfFb6wRxB5i5PGP4hMyRhPsArCyENWWvY4gCn8tylAc7yjpQyiDiy2QnymL2PjWM8QeAeCOy1eF2xgw==}
+    peerDependencies:
+      nx: '>= 14.1 <= 16'
+    dependencies:
+      '@phenomnomnominal/tsquery': 4.1.1(typescript@5.7.3)
+      ejs: 3.1.10
+      ignore: 5.3.2
+      nx: 20.0.0-rc.0(@swc-node/register@1.9.2)(@swc/core@1.5.29)(debug@4.4.0)
+      semver: 7.3.4
+      tmp: 0.2.3
+      tslib: 2.8.1
+    transitivePeerDependencies:
+      - typescript
+    dev: true
+
   /@nrwl/devkit@20.0.0-canary.20240926-529ab94(nx@20.0.0-rc.0):
     resolution: {integrity: sha512-N+XYfz00M8t8ilRi8poBb1K2xW+YkGcz3+SdTfzzLf3OOyZR7DE0zsxpraYo02n/PlIb3tvDv9TzieN3lQ6kkQ==}
     dependencies:
@@ -5573,6 +5600,15 @@ packages:
     resolution: {integrity: sha512-m7X9U6BG2+J+R1lSOdCiITLLrxm+cWlNI3HUFA92oLO77ObGNzaKdh8pMLqdZcshtkKuV84olNNXDfMc4FezBQ==}
     engines: {node: '>=10'}
     dev: false
+
+  /@phenomnomnominal/tsquery@4.1.1(typescript@5.7.3):
+    resolution: {integrity: sha512-jjMmK1tnZbm1Jq5a7fBliM4gQwjxMU7TFoRNwIyzwlO+eHPRCFv/Nv+H/Gi1jc3WR7QURG8D5d0Tn12YGrUqBQ==}
+    peerDependencies:
+      typescript: ^3 || ^4
+    dependencies:
+      esquery: 1.6.0
+      typescript: 5.7.3
+    dev: true
 
   /@phenomnomnominal/tsquery@5.0.1(typescript@5.7.3):
     resolution: {integrity: sha512-3nVv+e2FQwsW8Aw6qTU6f+1rfcJ3hrcnvH/mu9i8YhxO+9sqbOfpL8m6PbET5+xKOlz/VSbp0RoYWYCtIsnmuA==}
@@ -7155,14 +7191,6 @@ packages:
     dependencies:
       js-yaml: 3.14.1
       tslib: 2.8.1
-    dev: true
-
-  /@yookue/typedoc-theme-dumi@0.3.0(typescript@5.7.3):
-    resolution: {integrity: sha512-jDM/CvYOJR5XOgHDwMkNXk0ropAqogpNqJl61y+Os6VDGJ6oaR+fPoK1Jah6z8RUWMzVpN+eMevLEeWSHMXbbQ==}
-    peerDependencies:
-      typescript: '>= 4'
-    dependencies:
-      typescript: 5.7.3
     dev: true
 
   /@zkochan/js-yaml@0.0.7:
@@ -12571,6 +12599,13 @@ packages:
       yallist: 3.1.1
     dev: true
 
+  /lru-cache@6.0.0:
+    resolution: {integrity: sha512-Jo6dJ04CmSjuznwJSS3pUeWmd/H0ffTlkXXgwZi+eq1UCmqQwCh+eLsYOYCwY991i2Fah4h1BEMCx4qThGbsiA==}
+    engines: {node: '>=10'}
+    dependencies:
+      yallist: 4.0.0
+    dev: true
+
   /lru-cache@7.18.3:
     resolution: {integrity: sha512-jumlc0BIUrS3qJGgIkWZsyfAM7NCWiBcCDhnd+3NNM5KbBmLTgHVfWBcg6W+rLUsIpzpERPsvwUP7CckAQSOoA==}
     engines: {node: '>=12'}
@@ -15123,6 +15158,14 @@ packages:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
     hasBin: true
 
+  /semver@7.3.4:
+    resolution: {integrity: sha512-tCfb2WLjqFAtXn4KEdxIhalnRtoKFN7nAwj0B3ZXCbQloV2tq5eDbcTmT68JJD3nRJq24/XgxtQKFIpQdtvmVw==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /semver@7.6.3:
     resolution: {integrity: sha512-oVekP1cKtI+CTDvHWYFUcMtsK/00wmAEfyqKfNdARm8u1wNVhSgaX7A8d4UuIlUI5e84iEwOhs7ZPYRmzU9U6A==}
     engines: {node: '>=10'}
@@ -16272,6 +16315,10 @@ packages:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
     dev: true
 
+  /tslib@2.5.0:
+    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
+    dev: true
+
   /tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -16340,11 +16387,6 @@ packages:
   /typedarray@0.0.6:
     resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==}
 
-  /typedoc-default-themes@0.12.10:
-    resolution: {integrity: sha512-fIS001cAYHkyQPidWXmHuhs8usjP5XVJjWB8oZGqkTowZaz3v7g3KDZeeqE82FBrmkAnIBOY3jgy7lnPnqATbA==}
-    engines: {node: '>= 8'}
-    dev: true
-
   /typedoc-plugin-markdown@4.4.1(typedoc@0.27.6):
     resolution: {integrity: sha512-fx23nSCvewI9IR8lzIYtzDphETcgTDuxKcmHKGD4lo36oexC+B1k4NaCOY58Snqb4OlE8OXDAGVcQXYYuLRCNw==}
     engines: {node: '>= 18'}
@@ -16354,11 +16396,20 @@ packages:
       typedoc: 0.27.6(typescript@5.7.3)
     dev: true
 
-  /typedoc-plugin-merge-modules@6.1.0(typedoc@0.27.6):
-    resolution: {integrity: sha512-AZIyw+H1oG3xpJOq1b2CVnpK7A6OIddi7FsjljsbmQ7vx6dtaorEoz/DQPcGSOzWhWdJPqqdncIzVySuoffS2w==}
+  /typedoc-plugin-rename-defaults@0.6.7(typedoc@0.27.6):
+    resolution: {integrity: sha512-b+j0qQCdE69IUP6ZJgS6zonG59AcaKM8B8zdNlj1jnv6XefDLkIWdFxXfS3KhFOpVzW22pNCfdOCCym9ryS3wA==}
     peerDependencies:
-      typedoc: 0.26.x || ^0.27.1
+      typedoc: 0.22.x || 0.23.x || 0.24.x || 0.25.x
     dependencies:
+      typedoc: 0.27.6(typescript@5.7.3)
+    dev: true
+
+  /typedoc-theme-hierarchy@3.2.1(typedoc@0.27.6):
+    resolution: {integrity: sha512-Spum9ccW7bc++c8dLFNRh+9hvG+REntLQCNUb74pz28qcuhPOtxOuKteM/4aJbJDjw/9mORXZZYSToMGb+MrYw==}
+    peerDependencies:
+      typedoc: ^0.23.6
+    dependencies:
+      fs-extra: 10.1.0
       typedoc: 0.27.6(typescript@5.7.3)
     dev: true
 
@@ -17374,7 +17425,6 @@ packages:
 
   /yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
-    dev: false
 
   /yaml@1.10.2:
     resolution: {integrity: sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==}

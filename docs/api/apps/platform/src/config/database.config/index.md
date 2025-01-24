@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/config/database.config
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/config/database.config
 
 # apps/platform/src/config/database.config
 
 ## Classes
 
-- [DatabaseConfig](classes/DatabaseConfig.md)
+| Class | Description |
+| ------ | ------ |
+| [DatabaseConfig](classes/DatabaseConfig.md) | EnvService 类 |

@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/pino-logger/src/lib/PinoLogger](../index.md) / PinoLogger
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/pino-logger/src/lib/PinoLogger](../index.md) / PinoLogger
 
 # Class: PinoLogger
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:39](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L39)
 
 ## Implements
 
@@ -12,9 +10,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:39](https://github.com/a
 
 ### new PinoLogger()
 
-> **new PinoLogger**(`__namedParameters`, `cls`): [`PinoLogger`](PinoLogger.md)
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:51](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L51)
+```ts
+new PinoLogger(__namedParameters, cls): PinoLogger
+```
 
 #### Parameters
 
@@ -34,41 +32,41 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:51](https://github.com/a
 
 ### cls
 
-> `private` `readonly` **cls**: `ClsService`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:53](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L53)
+```ts
+private readonly cls: ClsService;
+```
 
 ***
 
 ### context
 
-> `protected` **context**: `string` = `''`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:47](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L47)
+```ts
+protected context: string = '';
+```
 
 ***
 
 ### contextName
 
-> `protected` `readonly` **contextName**: `string`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:48](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L48)
+```ts
+protected readonly contextName: string;
+```
 
 ***
 
 ### errorKey
 
-> `protected` `readonly` **errorKey**: `string` = `'err'`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:49](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L49)
+```ts
+protected readonly errorKey: string = 'err';
+```
 
 ***
 
 ### root
 
-> `readonly` `static` **root**: `Logger`\<`never`, `boolean`\>
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:45](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L45)
+```ts
+readonly static root: Logger<never, boolean>;
+```
 
 root is the most root logger that can be used to change params at runtime.
 Accessible only when `useExisting` is not set to `true` in `Params`.
@@ -80,9 +78,9 @@ Readonly, but you can change it's properties.
 
 #### Get Signature
 
-> **get** **logger**(): `Logger`\<`never`, `boolean`\>
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:82](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L82)
+```ts
+get logger(): Logger<never, boolean>
+```
 
 ##### Returns
 
@@ -92,9 +90,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:82](https://github.com/a
 
 ### assign()
 
-> **assign**(`fields`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:126](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L126)
+```ts
+assign(fields): void
+```
 
 #### Parameters
 
@@ -110,9 +108,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:126](https://github.com/
 
 ### call()
 
-> `protected` **call**(`method`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:140](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L140)
+```ts
+protected call(method, ...args): void
+```
 
 #### Parameters
 
@@ -134,9 +132,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:140](https://github.com/
 
 #### Call Signature
 
-> **debug**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:92](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L92)
+```ts
+debug(msg, ...args): void
+```
 
 Log at `'debug'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -157,13 +155,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.debug`
+```ts
+PinoMethods.debug
+```
 
 #### Call Signature
 
-> **debug**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:93](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L93)
+```ts
+debug(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -185,7 +188,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:93](https://github.com/a
 
 ##### Implementation of
 
-`PinoMethods.debug`
+```ts
+PinoMethods.debug
+```
 
 ***
 
@@ -193,9 +198,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:93](https://github.com/a
 
 #### Call Signature
 
-> **error**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:110](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L110)
+```ts
+error(msg, ...args): void
+```
 
 Log at `'error'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -216,13 +221,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.error`
+```ts
+PinoMethods.error
+```
 
 #### Call Signature
 
-> **error**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:111](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L111)
+```ts
+error(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -244,7 +254,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:111](https://github.com/
 
 ##### Implementation of
 
-`PinoMethods.error`
+```ts
+PinoMethods.error
+```
 
 ***
 
@@ -252,9 +264,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:111](https://github.com/
 
 #### Call Signature
 
-> **fatal**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:116](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L116)
+```ts
+fatal(msg, ...args): void
+```
 
 Log at `'fatal'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -275,13 +287,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.fatal`
+```ts
+PinoMethods.fatal
+```
 
 #### Call Signature
 
-> **fatal**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:117](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L117)
+```ts
+fatal(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -303,7 +320,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:117](https://github.com/
 
 ##### Implementation of
 
-`PinoMethods.fatal`
+```ts
+PinoMethods.fatal
+```
 
 ***
 
@@ -311,9 +330,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:117](https://github.com/
 
 #### Call Signature
 
-> **info**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:98](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L98)
+```ts
+info(msg, ...args): void
+```
 
 Log at `'info'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -334,13 +353,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.info`
+```ts
+PinoMethods.info
+```
 
 #### Call Signature
 
-> **info**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:99](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L99)
+```ts
+info(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -362,15 +386,17 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:99](https://github.com/a
 
 ##### Implementation of
 
-`PinoMethods.info`
+```ts
+PinoMethods.info
+```
 
 ***
 
 ### setContext()
 
-> **setContext**(`value`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:122](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L122)
+```ts
+setContext(value): void
+```
 
 #### Parameters
 
@@ -388,9 +414,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:122](https://github.com/
 
 #### Call Signature
 
-> **trace**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:86](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L86)
+```ts
+trace(msg, ...args): void
+```
 
 Log at `'trace'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -411,13 +437,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.trace`
+```ts
+PinoMethods.trace
+```
 
 #### Call Signature
 
-> **trace**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:87](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L87)
+```ts
+trace(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -439,7 +470,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:87](https://github.com/a
 
 ##### Implementation of
 
-`PinoMethods.trace`
+```ts
+PinoMethods.trace
+```
 
 ***
 
@@ -447,9 +480,9 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:87](https://github.com/a
 
 #### Call Signature
 
-> **warn**(`msg`, ...`args`): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:104](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L104)
+```ts
+warn(msg, ...args): void
+```
 
 Log at `'warn'` level the given msg. If the first argument is an object, all its properties will be included in the JSON line.
 If more args follows `msg`, these will be used to format `msg` using `util.format`.
@@ -470,13 +503,18 @@ If more args follows `msg`, these will be used to format `msg` using `util.forma
 
 ##### Implementation of
 
-`PinoMethods.warn`
+```ts
+PinoMethods.warn
+```
 
 #### Call Signature
 
-> **warn**(`obj`, `msg`?, ...`args`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:105](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/PinoLogger.ts#L105)
+```ts
+warn(
+   obj, 
+   msg?, ...
+   args?): void
+```
 
 ##### Parameters
 
@@ -498,4 +536,6 @@ Defined in: [packages/pino-logger/src/lib/PinoLogger.ts:105](https://github.com/
 
 ##### Implementation of
 
-`PinoMethods.warn`
+```ts
+PinoMethods.warn
+```

@@ -1,17 +1,54 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/database/schema/user.schema
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/database/schema/user.schema
 
 # apps/platform/src/database/schema/user.schema
 
 ## Enumerations
 
-- [UserStatus](enumerations/UserStatus.md)
+| Enumeration | Description |
+| ------ | ------ |
+| [UserStatus](enumerations/UserStatus.md) | - |
 
 ## Type Aliases
 
-- [NewUser](type-aliases/NewUser.md)
-- [User](type-aliases/User.md)
+### NewUser
+
+```ts
+type NewUser = typeof userTable.$inferInsert;
+```
+
+新用户数据类型 - 用于插入数据时的类型推断
+
+***
+
+### User
+
+```ts
+type User = typeof userTable.$inferSelect;
+```
+
+用户表记录类型 - 用于查询结果类型推断
 
 ## Variables
 
-- [userRelations](variables/userRelations.md)
-- [userTable](variables/userTable.md)
+### userRelations
+
+```ts
+const userRelations: Relations<{
+  tenant: One<true>;
+}>;
+```
+
+***
+
+### userTable
+
+```ts
+const userTable: PgTableWithColumns<{}>;
+```
+
+用户表 schema 定义
+继承自多租户基础表结构
+
+#### See
+
+createTenantTable

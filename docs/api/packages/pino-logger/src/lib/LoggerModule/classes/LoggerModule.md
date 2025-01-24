@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/pino-logger/src/lib/LoggerModule](../index.md) / LoggerModule
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/pino-logger/src/lib/LoggerModule](../index.md) / LoggerModule
 
 # Class: LoggerModule
-
-Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:24](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/LoggerModule.ts#L24)
 
 As NestJS@11 still supports express@4 `*`-style routing by itself let's keep
 it for the backward compatibility. On the next major NestJS release `*` we
@@ -12,9 +10,9 @@ can replace it with `/{*splat}`, and drop the support for NestJS@9 and below.
 
 ### new LoggerModule()
 
-> **new LoggerModule**(`params`): [`LoggerModule`](LoggerModule.md)
-
-Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:98](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/LoggerModule.ts#L98)
+```ts
+new LoggerModule(params): LoggerModule
+```
 
 #### Parameters
 
@@ -30,17 +28,17 @@ Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:98](https://github.com
 
 ### params
 
-> `private` `readonly` **params**: [`Params`](../../params/interfaces/Params.md)
-
-Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:98](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/LoggerModule.ts#L98)
+```ts
+private readonly params: Params;
+```
 
 ## Methods
 
 ### forRoot()
 
-> `static` **forRoot**(`params`?): `DynamicModule`
-
-Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:25](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/LoggerModule.ts#L25)
+```ts
+static forRoot(params?): DynamicModule
+```
 
 #### Parameters
 
@@ -56,9 +54,9 @@ Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:25](https://github.com
 
 ### forRootAsync()
 
-> `static` **forRootAsync**(`params`): `DynamicModule`
-
-Defined in: [packages/pino-logger/src/lib/LoggerModule.ts:53](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/LoggerModule.ts#L53)
+```ts
+static forRootAsync(params): DynamicModule
+```
 
 #### Parameters
 

@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/database/services/database.service](../index.md) / DatabaseService
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/database/services/database.service](../index.md) / DatabaseService
 
 # Class: DatabaseService
-
-Defined in: [apps/platform/src/database/services/database.service.ts:34](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L34)
 
 数据库服务
 
@@ -17,9 +15,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:34](https:/
 
 ### new DatabaseService()
 
-> **new DatabaseService**(`env`): [`DatabaseService`](DatabaseService.md)
-
-Defined in: [apps/platform/src/database/services/database.service.ts:45](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L45)
+```ts
+new DatabaseService(env): DatabaseService
+```
 
 构造函数
 
@@ -39,9 +37,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:45](https:/
 
 ### client
 
-> `private` **client**: `Sql`
-
-Defined in: [apps/platform/src/database/services/database.service.ts:36](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L36)
+```ts
+private client: Sql;
+```
 
 PostgreSQL 客户端实例
 
@@ -49,17 +47,17 @@ PostgreSQL 客户端实例
 
 ### db
 
-> `private` **db**: `any`
-
-Defined in: [apps/platform/src/database/services/database.service.ts:37](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L37)
+```ts
+private db: any;
+```
 
 ***
 
 ### env
 
-> `private` **env**: [`DatabaseConfig`](../../../../config/database.config/classes/DatabaseConfig.md)
-
-Defined in: [apps/platform/src/database/services/database.service.ts:45](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L45)
+```ts
+private env: DatabaseConfig;
+```
 
 配置服务,用于获取数据库连接配置
 
@@ -67,25 +65,25 @@ Defined in: [apps/platform/src/database/services/database.service.ts:45](https:/
 
 ### isolationStrategy
 
-> `private` **isolationStrategy**: [`TenantIsolationStrategy`](../enumerations/TenantIsolationStrategy.md)
-
-Defined in: [apps/platform/src/database/services/database.service.ts:38](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L38)
+```ts
+private isolationStrategy: TenantIsolationStrategy;
+```
 
 ***
 
 ### query
 
-> `readonly` **query**: `any`
-
-Defined in: [apps/platform/src/database/services/database.service.ts:39](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L39)
+```ts
+readonly query: any;
+```
 
 ## Methods
 
 ### checkSchemaExistsInDb()
 
-> **checkSchemaExistsInDb**(`schemaName`): `Promise`\<`boolean`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:94](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L94)
+```ts
+checkSchemaExistsInDb(schemaName): Promise<boolean>
+```
 
 检查Schema是否存在
 
@@ -103,9 +101,12 @@ Defined in: [apps/platform/src/database/services/database.service.ts:94](https:/
 
 ### createTenantSchema()
 
-> **createTenantSchema**(`schema`): `Promise`\<\{ `error`: `string`; `success`: `boolean`; \}\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:107](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L107)
+```ts
+createTenantSchema(schema): Promise<{
+  error: string;
+  success: boolean;
+}>
+```
 
 创建租户Schema
 
@@ -117,15 +118,18 @@ Defined in: [apps/platform/src/database/services/database.service.ts:107](https:
 
 #### Returns
 
-`Promise`\<\{ `error`: `string`; `success`: `boolean`; \}\>
+`Promise`\<\{
+  `error`: `string`;
+  `success`: `boolean`;
+ \}\>
 
 ***
 
 ### getTenantDB()
 
-> **getTenantDB**(`tenantId`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:163](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L163)
+```ts
+getTenantDB(tenantId): Promise<any>
+```
 
 获取数据库连接
 
@@ -151,9 +155,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:163](https:
 
 ### getTenantInfo()
 
-> **getTenantInfo**(`tenantId`): `Promise`\<`any`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:199](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L199)
+```ts
+getTenantInfo(tenantId): Promise<any>
+```
 
 根据租户ID查询租户信息
 
@@ -175,9 +179,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:199](https:
 
 ### getTenantSchema()
 
-> `private` **getTenantSchema**(`tenantId`): `Promise`\<`string`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:149](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L149)
+```ts
+private getTenantSchema(tenantId): Promise<string>
+```
 
 获取租户的数据库Schema名称
 
@@ -199,9 +203,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:149](https:
 
 ### initializeSchemaStructure()
 
-> `private` **initializeSchemaStructure**(`schemaName`): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:132](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L132)
+```ts
+private initializeSchemaStructure(schemaName): Promise<void>
+```
 
 初始化Schema的表结构
 
@@ -219,9 +223,9 @@ Defined in: [apps/platform/src/database/services/database.service.ts:132](https:
 
 ### onModuleInit()
 
-> **onModuleInit**(): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:70](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L70)
+```ts
+onModuleInit(): Promise<void>
+```
 
 模块初始化钩子
 启用行级安全性
@@ -232,15 +236,17 @@ Defined in: [apps/platform/src/database/services/database.service.ts:70](https:/
 
 #### Implementation of
 
-`OnModuleInit.onModuleInit`
+```ts
+OnModuleInit.onModuleInit
+```
 
 ***
 
 ### setTenantContext()
 
-> **setTenantContext**(`tenantId`): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/database/services/database.service.ts:189](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/database.service.ts#L189)
+```ts
+setTenantContext(tenantId): Promise<void>
+```
 
 设置当前租户上下文
 在数据库会话中设置当前租户ID

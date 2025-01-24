@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/database/services/tenant-context.service](../index.md) / TenantContextService
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/database/services/tenant-context.service](../index.md) / TenantContextService
 
 # Class: TenantContextService
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:13](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L13)
 
 租户上下文服务
 
@@ -15,9 +13,9 @@ Defined in: [apps/platform/src/database/services/tenant-context.service.ts:13](h
 
 ### new TenantContextService()
 
-> **new TenantContextService**(`cls`): [`TenantContextService`](TenantContextService.md)
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L18)
+```ts
+new TenantContextService(cls): TenantContextService
+```
 
 #### Parameters
 
@@ -33,33 +31,33 @@ Defined in: [apps/platform/src/database/services/tenant-context.service.ts:18](h
 
 ### cls
 
-> `private` `readonly` **cls**: `ClsService`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:18](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L18)
+```ts
+private readonly cls: ClsService;
+```
 
 ***
 
 ### TENANT\_ID\_KEY
 
-> `private` `readonly` **TENANT\_ID\_KEY**: `"tenantId"` = `'tenantId'`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:16](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L16)
+```ts
+private readonly TENANT_ID_KEY: "tenantId" = 'tenantId';
+```
 
 ***
 
 ### TENANT\_SCHEMA\_KEY
 
-> `private` `readonly` **TENANT\_SCHEMA\_KEY**: `"tenantSchema"` = `'tenantSchema'`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:15](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L15)
+```ts
+private readonly TENANT_SCHEMA_KEY: "tenantSchema" = 'tenantSchema';
+```
 
 ## Methods
 
 ### getTenantId()
 
-> **getTenantId**(): `string`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:54](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L54)
+```ts
+getTenantId(): string
+```
 
 获取当前租户ID
 
@@ -77,9 +75,9 @@ Defined in: [apps/platform/src/database/services/tenant-context.service.ts:54](h
 
 ### getTenantSchemaFromCls()
 
-> **getTenantSchemaFromCls**(): `string`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:33](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L33)
+```ts
+getTenantSchemaFromCls(): string
+```
 
 获取当前租户Schema
 
@@ -97,9 +95,9 @@ Defined in: [apps/platform/src/database/services/tenant-context.service.ts:33](h
 
 ### setTenantId()
 
-> **setTenantId**(`tenantId`): `void`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:45](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L45)
+```ts
+setTenantId(tenantId): void
+```
 
 设置当前租户ID到CLS中
 
@@ -119,9 +117,9 @@ Defined in: [apps/platform/src/database/services/tenant-context.service.ts:45](h
 
 ### setTenantSchemaInCls()
 
-> **setTenantSchemaInCls**(`schema`): `void`
-
-Defined in: [apps/platform/src/database/services/tenant-context.service.ts:24](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/services/tenant-context.service.ts#L24)
+```ts
+setTenantSchemaInCls(schema): void
+```
 
 设置当前租户Schema到CLS中
 

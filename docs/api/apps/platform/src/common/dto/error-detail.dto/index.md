@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/common/dto/error-detail.dto
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/common/dto/error-detail.dto
 
 # apps/platform/src/common/dto/error-detail.dto
 
 ## Classes
 
-- [ErrorDetailDto](classes/ErrorDetailDto.md)
+| Class | Description |
+| ------ | ------ |
+| [ErrorDetailDto](classes/ErrorDetailDto.md) | - |

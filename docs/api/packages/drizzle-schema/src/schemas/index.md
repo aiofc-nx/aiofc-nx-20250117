@@ -1,4 +1,4 @@
-[AIOFC API 文档](../../../../index.md) / packages/drizzle-schema/src/schemas
+[@aiofc-nx-2025/source](../../../../index.md) / packages/drizzle-schema/src/schemas
 
 # packages/drizzle-schema/src/schemas
 
@@ -6,19 +6,19 @@
 
 ### NewTenant
 
-Re-exports [NewTenant](../../../../apps/platform/src/database/schema/tenant.schema/type-aliases/NewTenant.md)
+Re-exports [NewTenant](../../../../apps/platform/src/database/schema/tenant.schema/index.md#newtenant)
 
 ***
 
 ### NewUser
 
-Re-exports [NewUser](../../../../apps/platform/src/database/schema/user.schema/type-aliases/NewUser.md)
+Re-exports [NewUser](../../../../apps/platform/src/database/schema/user.schema/index.md#newuser)
 
 ***
 
 ### Tenant
 
-Re-exports [Tenant](../../../../apps/platform/src/database/schema/tenant.schema/type-aliases/Tenant.md)
+Re-exports [Tenant](../../../../apps/platform/src/database/schema/tenant.schema/index.md#tenant)
 
 ***
 
@@ -30,7 +30,7 @@ Re-exports [TenantCategory](../../../../apps/platform/src/database/schema/tenant
 
 ### tenantRelations
 
-Re-exports [tenantRelations](../../../../apps/platform/src/database/schema/tenant.schema/variables/tenantRelations.md)
+Re-exports [tenantRelations](../../../../apps/platform/src/database/schema/tenant.schema/index.md#tenantrelations)
 
 ***
 
@@ -42,19 +42,19 @@ Re-exports [TenantStatus](../../../../apps/platform/src/database/schema/tenant.s
 
 ### tenantTable
 
-Re-exports [tenantTable](../../../../apps/platform/src/database/schema/tenant.schema/variables/tenantTable.md)
+Re-exports [tenantTable](../../../../apps/platform/src/database/schema/tenant.schema/index.md#tenanttable)
 
 ***
 
 ### User
 
-Re-exports [User](../../../../apps/platform/src/database/schema/user.schema/type-aliases/User.md)
+Re-exports [User](../../../../apps/platform/src/database/schema/user.schema/index.md#user)
 
 ***
 
 ### userRelations
 
-Re-exports [userRelations](../../../../apps/platform/src/database/schema/user.schema/variables/userRelations.md)
+Re-exports [userRelations](../../../../apps/platform/src/database/schema/user.schema/index.md#userrelations)
 
 ***
 
@@ -66,4 +66,4 @@ Re-exports [UserStatus](../../../../apps/platform/src/database/schema/user.schem
 
 ### userTable
 
-Re-exports [userTable](../../../../apps/platform/src/database/schema/user.schema/variables/userTable.md)
+Re-exports [userTable](../../../../apps/platform/src/database/schema/user.schema/index.md#usertable)

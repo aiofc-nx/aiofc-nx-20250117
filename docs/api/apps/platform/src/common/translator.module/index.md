@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../index.md) / apps/platform/src/common/translator.module
+[@aiofc-nx-2025/source](../../../../../index.md) / apps/platform/src/common/translator.module
 
 # apps/platform/src/common/translator.module
 
 ## Classes
 
-- [TranslatorModule](classes/TranslatorModule.md)
+| Class | Description |
+| ------ | ------ |
+| [TranslatorModule](classes/TranslatorModule.md) | - |

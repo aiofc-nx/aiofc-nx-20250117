@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/common/pipes/zod.validation.pipe](../index.md) / ZodValidationPipe
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/common/pipes/zod.validation.pipe](../index.md) / ZodValidationPipe
 
 # Class: ZodValidationPipe
-
-Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:4](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/pipes/zod.validation.pipe.ts#L4)
 
 ## Implements
 
@@ -12,9 +10,9 @@ Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:4](https://gi
 
 ### new ZodValidationPipe()
 
-> **new ZodValidationPipe**(`schema`): [`ZodValidationPipe`](ZodValidationPipe.md)
-
-Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:5](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/pipes/zod.validation.pipe.ts#L5)
+```ts
+new ZodValidationPipe(schema): ZodValidationPipe
+```
 
 #### Parameters
 
@@ -30,17 +28,17 @@ Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:5](https://gi
 
 ### schema
 
-> `private` **schema**: `ZodType`
-
-Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:5](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/pipes/zod.validation.pipe.ts#L5)
+```ts
+private schema: ZodType;
+```
 
 ## Methods
 
 ### transform()
 
-> **transform**(`value`): `any`
-
-Defined in: [apps/platform/src/common/pipes/zod.validation.pipe.ts:7](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/common/pipes/zod.validation.pipe.ts#L7)
+```ts
+transform(value): any
+```
 
 Method to implement a custom pipe.  Called with two parameters
 
@@ -58,4 +56,6 @@ argument before it is received by route handler method
 
 #### Implementation of
 
-`PipeTransform.transform`
+```ts
+PipeTransform.transform
+```

@@ -1,7 +1,11 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/common/constants/constraint-errors
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/common/constants/constraint-errors
 
 # apps/platform/src/common/constants/constraint-errors
 
 ## Variables
 
-- [constraintErrors](variables/constraintErrors.md)
+### constraintErrors
+
+```ts
+const constraintErrors: Record<string, ErrorKeys>;
+```

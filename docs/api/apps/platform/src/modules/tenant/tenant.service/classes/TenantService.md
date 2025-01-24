@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/modules/tenant/tenant.service](../index.md) / TenantService
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/modules/tenant/tenant.service](../index.md) / TenantService
 
 # Class: TenantService
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:26](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L26)
 
 租户服务类
 提供租户相关的增删改查等操作
@@ -21,9 +19,9 @@ const tenant = await tenantService.create({
 
 ### new TenantService()
 
-> **new TenantService**(`db`): [`TenantService`](TenantService.md)
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:27](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L27)
+```ts
+new TenantService(db): TenantService
+```
 
 #### Parameters
 
@@ -39,17 +37,17 @@ Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:27](https://gith
 
 ### db
 
-> `private` **db**: [`DatabaseService`](../../../../database/services/database.service/classes/DatabaseService.md)
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:27](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L27)
+```ts
+private db: DatabaseService;
+```
 
 ## Methods
 
 ### checkSchemaExists()
 
-> `private` **checkSchemaExists**(`schema`, `excludeId`?): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:40](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L40)
+```ts
+private checkSchemaExists(schema, excludeId?): Promise<void>
+```
 
 检查租户Schema标识是否已存在
 
@@ -85,9 +83,24 @@ await tenantService.checkSchemaExists('t_test');
 
 ### create()
 
-> **create**(`data`): `Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:69](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L69)
+```ts
+create(data): Promise<{
+  category: string;
+  connection_string: string;
+  createdAt: Date;
+  database: string;
+  deletedAt: Date;
+  description: string;
+  id: string;
+  name: string;
+  organization_code: string;
+  organization_name: string;
+  schema: string;
+  status: string;
+  tenantId: string;
+  updatedAt: Date;
+}>
+```
 
 创建新租户
 
@@ -135,7 +148,22 @@ Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:69](https://gith
 
 #### Returns
 
-`Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
+`Promise`\<\{
+  `category`: `string`;
+  `connection_string`: `string`;
+  `createdAt`: `Date`;
+  `database`: `string`;
+  `deletedAt`: `Date`;
+  `description`: `string`;
+  `id`: `string`;
+  `name`: `string`;
+  `organization_code`: `string`;
+  `organization_name`: `string`;
+  `schema`: `string`;
+  `status`: `string`;
+  `tenantId`: `string`;
+  `updatedAt`: `Date`;
+ \}\>
 
 创建的租户信息
 
@@ -152,9 +180,9 @@ const tenant = await tenantService.create({
 
 ### delete()
 
-> **delete**(`id`): `Promise`\<`boolean`\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:166](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L166)
+```ts
+delete(id): Promise<boolean>
+```
 
 软删除租户
 
@@ -182,9 +210,9 @@ const isDeleted = await tenantService.delete('123e4567-e89b-12d3-a456-4266141740
 
 ### findAll()
 
-> **findAll**(): `Promise`\<`object`[]\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:116](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L116)
+```ts
+findAll(): Promise<object[]>
+```
 
 获取所有未删除的租户列表
 
@@ -204,9 +232,24 @@ const tenants = await tenantService.findAll();
 
 ### findById()
 
-> **findById**(`id`): `Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:96](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L96)
+```ts
+findById(id): Promise<{
+  category: string;
+  connection_string: string;
+  createdAt: Date;
+  database: string;
+  deletedAt: Date;
+  description: string;
+  id: string;
+  name: string;
+  organization_code: string;
+  organization_name: string;
+  schema: string;
+  status: string;
+  tenantId: string;
+  updatedAt: Date;
+}>
+```
 
 根据ID查找租户
 
@@ -220,7 +263,22 @@ Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:96](https://gith
 
 #### Returns
 
-`Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
+`Promise`\<\{
+  `category`: `string`;
+  `connection_string`: `string`;
+  `createdAt`: `Date`;
+  `database`: `string`;
+  `deletedAt`: `Date`;
+  `description`: `string`;
+  `id`: `string`;
+  `name`: `string`;
+  `organization_code`: `string`;
+  `organization_name`: `string`;
+  `schema`: `string`;
+  `status`: `string`;
+  `tenantId`: `string`;
+  `updatedAt`: `Date`;
+ \}\>
 
 租户信息，如果不存在则返回null
 
@@ -234,9 +292,9 @@ const tenant = await tenantService.findById('123e4567-e89b-12d3-a456-42661417400
 
 ### forceDelete()
 
-> **forceDelete**(`id`): `Promise`\<`boolean`\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:189](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L189)
+```ts
+forceDelete(id): Promise<boolean>
+```
 
 强制删除租户（物理删除）
 
@@ -264,9 +322,24 @@ const isDeleted = await tenantService.forceDelete('123e4567-e89b-12d3-a456-42661
 
 ### restore()
 
-> **restore**(`id`): `Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:208](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L208)
+```ts
+restore(id): Promise<{
+  category: string;
+  connection_string: string;
+  createdAt: Date;
+  database: string;
+  deletedAt: Date;
+  description: string;
+  id: string;
+  name: string;
+  organization_code: string;
+  organization_name: string;
+  schema: string;
+  status: string;
+  tenantId: string;
+  updatedAt: Date;
+}>
+```
 
 恢复已删除的租户
 
@@ -280,7 +353,22 @@ Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:208](https://git
 
 #### Returns
 
-`Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
+`Promise`\<\{
+  `category`: `string`;
+  `connection_string`: `string`;
+  `createdAt`: `Date`;
+  `database`: `string`;
+  `deletedAt`: `Date`;
+  `description`: `string`;
+  `id`: `string`;
+  `name`: `string`;
+  `organization_code`: `string`;
+  `organization_name`: `string`;
+  `schema`: `string`;
+  `status`: `string`;
+  `tenantId`: `string`;
+  `updatedAt`: `Date`;
+ \}\>
 
 恢复后的租户信息，如果租户不存在则返回null
 
@@ -294,9 +382,24 @@ const restoredTenant = await tenantService.restore('123e4567-e89b-12d3-a456-4266
 
 ### update()
 
-> **update**(`id`, `data`): `Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
-
-Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:137](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/modules/tenant/tenant.service.ts#L137)
+```ts
+update(id, data): Promise<{
+  category: string;
+  connection_string: string;
+  createdAt: Date;
+  database: string;
+  deletedAt: Date;
+  description: string;
+  id: string;
+  name: string;
+  organization_code: string;
+  organization_name: string;
+  schema: string;
+  status: string;
+  tenantId: string;
+  updatedAt: Date;
+}>
+```
 
 更新租户信息
 
@@ -310,13 +413,33 @@ Defined in: [apps/platform/src/modules/tenant/tenant.service.ts:137](https://git
 
 ##### data
 
-`Partial`\<\{ `database`: `string`; `name`: `string`; `schema`: `string`; `tenantId`: `string`; \}\>
+`Partial`\<\{
+  `database`: `string`;
+  `name`: `string`;
+  `schema`: `string`;
+  `tenantId`: `string`;
+ \}\>
 
 需要更新的租户数据
 
 #### Returns
 
-`Promise`\<\{ `category`: `string`; `connection_string`: `string`; `createdAt`: `Date`; `database`: `string`; `deletedAt`: `Date`; `description`: `string`; `id`: `string`; `name`: `string`; `organization_code`: `string`; `organization_name`: `string`; `schema`: `string`; `status`: `string`; `tenantId`: `string`; `updatedAt`: `Date`; \}\>
+`Promise`\<\{
+  `category`: `string`;
+  `connection_string`: `string`;
+  `createdAt`: `Date`;
+  `database`: `string`;
+  `deletedAt`: `Date`;
+  `description`: `string`;
+  `id`: `string`;
+  `name`: `string`;
+  `organization_code`: `string`;
+  `organization_name`: `string`;
+  `schema`: `string`;
+  `status`: `string`;
+  `tenantId`: `string`;
+  `updatedAt`: `Date`;
+ \}\>
 
 更新后的租户信息，如果租户不存在则返回null
 

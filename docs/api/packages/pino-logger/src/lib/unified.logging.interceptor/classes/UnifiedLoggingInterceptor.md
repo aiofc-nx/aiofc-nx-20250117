@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/pino-logger/src/lib/unified.logging.interceptor](../index.md) / UnifiedLoggingInterceptor
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/pino-logger/src/lib/unified.logging.interceptor](../index.md) / UnifiedLoggingInterceptor
 
 # Class: UnifiedLoggingInterceptor
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:99](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L99)
 
 ## Implements
 
@@ -12,9 +10,12 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:99](htt
 
 ### new UnifiedLoggingInterceptor()
 
-> **new UnifiedLoggingInterceptor**(`cls`, `logger`, `config`?): [`UnifiedLoggingInterceptor`](UnifiedLoggingInterceptor.md)
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:102](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L102)
+```ts
+new UnifiedLoggingInterceptor(
+   cls, 
+   logger, 
+   config?): UnifiedLoggingInterceptor
+```
 
 #### Parameters
 
@@ -38,33 +39,33 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:102](ht
 
 ### cls
 
-> `private` `readonly` **cls**: `ClsService`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:103](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L103)
+```ts
+private readonly cls: ClsService;
+```
 
 ***
 
 ### config
 
-> `private` `readonly` **config**: [`LoggerConfig`](../../interfaces/logger.config/interfaces/LoggerConfig.md)
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:100](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L100)
+```ts
+private readonly config: LoggerConfig;
+```
 
 ***
 
 ### logger
 
-> `private` `readonly` **logger**: [`PinoLogger`](../../PinoLogger/classes/PinoLogger.md)
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:104](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L104)
+```ts
+private readonly logger: PinoLogger;
+```
 
 ## Methods
 
 ### getErrorCode()
 
-> `private` **getErrorCode**(`error`): `number`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:514](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L514)
+```ts
+private getErrorCode(error): number
+```
 
 获取错误状态码
 
@@ -82,9 +83,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:514](ht
 
 ### getErrorDetails()
 
-> `private` **getErrorDetails**(`error`): `Record`\<`string`, `any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:524](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L524)
+```ts
+private getErrorDetails(error): Record<string, any>
+```
 
 获取错误详情
 
@@ -102,9 +103,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:524](ht
 
 ### getErrorType()
 
-> `private` **getErrorType**(`error`): `string`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:433](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L433)
+```ts
+private getErrorType(error): string
+```
 
 获取错误类型
 
@@ -122,9 +123,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:433](ht
 
 ### getPerformanceMetrics()
 
-> `private` **getPerformanceMetrics**(`startTime`): `Record`\<`string`, `any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:151](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L151)
+```ts
+private getPerformanceMetrics(startTime): Record<string, any>
+```
 
 获取性能指标
 
@@ -142,9 +143,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:151](ht
 
 ### getRouteInfo()
 
-> `private` **getRouteInfo**(`request`): `object`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:329](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L329)
+```ts
+private getRouteInfo(request): object
+```
 
 获取路由信息
 
@@ -160,23 +161,29 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:329](ht
 
 ##### params
 
-> **params**: `unknown` = `request.params`
+```ts
+params: unknown = request.params;
+```
 
 ##### query
 
-> **query**: `unknown` = `request.query`
+```ts
+query: unknown = request.query;
+```
 
 ##### routeId
 
-> **routeId**: `string`
+```ts
+routeId: string;
+```
 
 ***
 
 ### getTraceInfo()
 
-> `private` **getTraceInfo**(`request`): `Record`\<`string`, `any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:117](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L117)
+```ts
+private getTraceInfo(request): Record<string, any>
+```
 
 获取追踪信息
 
@@ -194,9 +201,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:117](ht
 
 ### getUserInfo()
 
-> `private` **getUserInfo**(`request`): `Record`\<`string`, `any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:313](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L313)
+```ts
+private getUserInfo(request): Record<string, any>
+```
 
 获取用户信息
 
@@ -214,9 +221,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:313](ht
 
 ### intercept()
 
-> **intercept**(`context`, `next`): `Observable`\<`any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:177](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L177)
+```ts
+intercept(context, next): Observable<any>
+```
 
 Method to implement a custom interceptor.
 
@@ -242,15 +249,22 @@ a reference to the `CallHandler`, which provides access to an
 
 #### Implementation of
 
-`NestInterceptor.intercept`
+```ts
+NestInterceptor.intercept
+```
 
 ***
 
 ### logCacheOperation()
 
-> `private` **logCacheOperation**(`type`, `key`, `value`?, `duration`?, `success`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:589](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L589)
+```ts
+private logCacheOperation(
+   type, 
+   key, 
+   value?, 
+   duration?, 
+   success?): void
+```
 
 记录缓存操作
 
@@ -284,9 +298,14 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:589](ht
 
 ### logError()
 
-> `private` **logError**(`error`, `request`, `response`, `startTime`, `metrics`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:548](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L548)
+```ts
+private logError(
+   error, 
+   request, 
+   response, 
+   startTime, 
+   metrics?): void
+```
 
 记录错误信息
 
@@ -320,9 +339,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:548](ht
 
 ### logRequest()
 
-> `private` **logRequest**(`request`): `void`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:340](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L340)
+```ts
+private logRequest(request): void
+```
 
 记录请求信息
 
@@ -340,9 +359,13 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:340](ht
 
 ### logResponse()
 
-> `private` **logResponse**(`request`, `response`, `startTime`, `metrics`?): `void`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:374](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L374)
+```ts
+private logResponse(
+   request, 
+   response, 
+   startTime, 
+   metrics?): void
+```
 
 记录响应信息
 
@@ -372,9 +395,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:374](ht
 
 ### sanitizeBody()
 
-> `private` **sanitizeBody**(`body`): `any`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:291](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L291)
+```ts
+private sanitizeBody(body): any
+```
 
 脱敏请求体
 
@@ -392,9 +415,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:291](ht
 
 ### sanitizeHeaders()
 
-> `private` **sanitizeHeaders**(`headers`): `Record`\<`string`, `any`\>
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:276](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L276)
+```ts
+private sanitizeHeaders(headers): Record<string, any>
+```
 
 脱敏请求头
 
@@ -412,9 +435,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:276](ht
 
 ### shouldSample()
 
-> `private` **shouldSample**(): `boolean`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:172](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L172)
+```ts
+private shouldSample(): boolean
+```
 
 是否需要采样
 
@@ -426,9 +449,9 @@ Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:172](ht
 
 ### shouldSkipLogging()
 
-> `private` **shouldSkipLogging**(`request`): `boolean`
-
-Defined in: [packages/pino-logger/src/lib/unified.logging.interceptor.ts:224](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/pino-logger/src/lib/unified.logging.interceptor.ts#L224)
+```ts
+private shouldSkipLogging(request): boolean
+```
 
 判断是否需要跳过日志记录
 

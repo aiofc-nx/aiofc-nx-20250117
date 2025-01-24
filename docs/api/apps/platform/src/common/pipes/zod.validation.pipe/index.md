@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../../index.md) / apps/platform/src/common/pipes/zod.validation.pipe
+[@aiofc-nx-2025/source](../../../../../../index.md) / apps/platform/src/common/pipes/zod.validation.pipe
 
 # apps/platform/src/common/pipes/zod.validation.pipe
 
 ## Classes
 
-- [ZodValidationPipe](classes/ZodValidationPipe.md)
+| Class | Description |
+| ------ | ------ |
+| [ZodValidationPipe](classes/ZodValidationPipe.md) | - |

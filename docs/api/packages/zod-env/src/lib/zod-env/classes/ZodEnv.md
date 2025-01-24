@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../index.md) / [packages/zod-env/src/lib/zod-env](../index.md) / ZodEnv
+[@aiofc-nx-2025/source](../../../../../../index.md) / [packages/zod-env/src/lib/zod-env](../index.md) / ZodEnv
 
 # Class: ZodEnv\<T\>
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:55](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L55)
 
 用于加载和管理配置的功能类
 
@@ -70,9 +68,9 @@ console.log(config.host);    // IDE会提供自动完成
 
 ### new ZodEnv()
 
-> **new ZodEnv**\<`T`\>(`schema`, `options`): [`ZodEnv`](ZodEnv.md)\<`T`\>
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:64](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L64)
+```ts
+new ZodEnv<T>(schema, options): ZodEnv<T>
+```
 
 用于创建ZodEnv实例
 
@@ -98,9 +96,9 @@ YAML配置文件的选项
 
 ### \_config
 
-> `private` **\_config**: `T`
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:57](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L57)
+```ts
+private _config: T;
+```
 
 存储验证后的配置对象
 
@@ -110,9 +108,9 @@ Defined in: [packages/zod-env/src/lib/zod-env.ts:57](https://github.com/aiofc-nx
 
 #### Get Signature
 
-> **get** **config**(): `T`
-
-Defined in: [packages/zod-env/src/lib/zod-env.ts:73](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/packages/zod-env/src/lib/zod-env.ts#L73)
+```ts
+get config(): T
+```
 
 获取验证后的配置对象
 

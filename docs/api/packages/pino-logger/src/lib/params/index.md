@@ -1,20 +1,52 @@
-[AIOFC API 文档](../../../../../index.md) / packages/pino-logger/src/lib/params
+[@aiofc-nx-2025/source](../../../../../index.md) / packages/pino-logger/src/lib/params
 
 # packages/pino-logger/src/lib/params
 
 ## Interfaces
 
-- [LoggerModuleAsyncParams](interfaces/LoggerModuleAsyncParams.md)
-- [Params](interfaces/Params.md)
+| Interface | Description |
+| ------ | ------ |
+| [LoggerModuleAsyncParams](interfaces/LoggerModuleAsyncParams.md) | - |
+| [Params](interfaces/Params.md) | - |
 
 ## Type Aliases
 
-- [PassedLogger](type-aliases/PassedLogger.md)
+### PassedLogger
+
+```ts
+type PassedLogger = object;
+```
+
+#### Type declaration
+
+##### logger
+
+```ts
+logger: Logger;
+```
 
 ## Variables
 
-- [PARAMS\_PROVIDER\_TOKEN](variables/PARAMS_PROVIDER_TOKEN.md)
+### PARAMS\_PROVIDER\_TOKEN
+
+```ts
+const PARAMS_PROVIDER_TOKEN: "pino-params" = 'pino-params';
+```
 
 ## Functions
 
-- [isPassedLogger](functions/isPassedLogger.md)
+### isPassedLogger()
+
+```ts
+function isPassedLogger(pinoHttpProp): pinoHttpProp is PassedLogger
+```
+
+#### Parameters
+
+##### pinoHttpProp
+
+`any`
+
+#### Returns
+
+`pinoHttpProp is PassedLogger`

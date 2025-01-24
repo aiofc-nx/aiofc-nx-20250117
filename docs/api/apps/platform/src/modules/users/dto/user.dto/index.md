@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../../../../index.md) / apps/platform/src/modules/users/dto/user.dto
+[@aiofc-nx-2025/source](../../../../../../../index.md) / apps/platform/src/modules/users/dto/user.dto
 
 # apps/platform/src/modules/users/dto/user.dto
 
 ## Classes
 
-- [CreateUserDto](classes/CreateUserDto.md)
+| Class | Description |
+| ------ | ------ |
+| [CreateUserDto](classes/CreateUserDto.md) | - |

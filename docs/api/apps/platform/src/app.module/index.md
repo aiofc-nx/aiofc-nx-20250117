@@ -1,7 +1,9 @@
-[AIOFC API 文档](../../../../index.md) / apps/platform/src/app.module
+[@aiofc-nx-2025/source](../../../../index.md) / apps/platform/src/app.module
 
 # apps/platform/src/app.module
 
 ## Classes
 
-- [AppModule](classes/AppModule.md)
+| Class | Description |
+| ------ | ------ |
+| [AppModule](classes/AppModule.md) | - |

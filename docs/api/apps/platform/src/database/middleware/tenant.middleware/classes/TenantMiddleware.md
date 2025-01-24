@@ -1,8 +1,6 @@
-[AIOFC API 文档](../../../../../../../index.md) / [apps/platform/src/database/middleware/tenant.middleware](../index.md) / TenantMiddleware
+[@aiofc-nx-2025/source](../../../../../../../index.md) / [apps/platform/src/database/middleware/tenant.middleware](../index.md) / TenantMiddleware
 
 # Class: TenantMiddleware
-
-Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:12](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/middleware/tenant.middleware.ts#L12)
 
 租户中间件
 
@@ -13,9 +11,9 @@ Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:12](http
 
 ### new TenantMiddleware()
 
-> **new TenantMiddleware**(`tenantContext`): [`TenantMiddleware`](TenantMiddleware.md)
-
-Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:17](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/middleware/tenant.middleware.ts#L17)
+```ts
+new TenantMiddleware(tenantContext): TenantMiddleware
+```
 
 构造函数
 
@@ -35,9 +33,9 @@ Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:17](http
 
 ### tenantContext
 
-> `private` **tenantContext**: [`TenantContextService`](../../../services/tenant-context.service/classes/TenantContextService.md)
-
-Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:17](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/middleware/tenant.middleware.ts#L17)
+```ts
+private tenantContext: TenantContextService;
+```
 
 租户上下文服务,用于管理租户信息
 
@@ -45,9 +43,12 @@ Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:17](http
 
 ### use()
 
-> **use**(`req`, `_reply`, `next`): `Promise`\<`void`\>
-
-Defined in: [apps/platform/src/database/middleware/tenant.middleware.ts:27](https://github.com/aiofc-nx/aiofc-nx-20250117/blob/67a7c164367a9389d2ffea309275a0822750a8a2/apps/platform/src/database/middleware/tenant.middleware.ts#L27)
+```ts
+use(
+   req, 
+   _reply, 
+next): Promise<void>
+```
 
 中间件处理函数
 
